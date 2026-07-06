@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {"type": "string", "description": "Absolute path that was stat-ed."},
+    "size_bytes": {"type": "integer", "description": "Size in bytes."},
+    "mode": {"type": "string", "description": "Permission bits as an octal string (e.g. '0644')."},
+    "modified_at": {"type": "string", "description": "Last modification time in RFC3339 form."},
+    "is_dir": {"type": "boolean", "description": "True for directories."}
+  },
+  "required": ["path", "size_bytes", "mode", "modified_at", "is_dir"],
+  "additionalProperties": false
+}

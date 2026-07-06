@@ -1,0 +1,52 @@
+name: full-example
+title: "Full Example"
+version: "1.0.0"
+sources:
+  maindb:
+    type: postgres
+    connect:
+      datasource: "postgres://user:pass@localhost:5432/main"
+    tools:
+      prefix: main
+
+  forgejo:
+    type: proxy
+    connect:
+      command: forgejo-mcp-server
+    tools:
+      prefix: forgejo
+      remove:
+        - "branch_protection"
+
+  weather:
+    type: http
+    connect:
+      url: https://api.weather.example.com/v1/forecast
+      method: GET
+      description: "Get weather forecast"
+
+  checker:
+    type: english
+
+  search:
+    type: websearch
+    connect:
+      brave_api_key_env: BRAVE_API_KEY
+
+  # Temporal example — 30 tools across workflow/activity/schedule/query/signal/batch.
+  # The full config shape supports host, namespace, tls_enabled,
+  # api_key, and mTLS paths (tls_client_cert_path + tls_client_key_path).
+  # Left commented in the full-example so the existing Test_ConfigSourcesFull
+  # assertion (5 sources by name) stays decoupled from Temporal-specific config.
+  #
+  # workflows:
+  #   type: temporal
+  #   connect:
+  #     host: my-cluster.tmprl.cloud:7233
+  #     namespace: production
+  #     api_key: "${TEMPORAL_API_KEY}"
+  #     tls_enabled: true
+  #   tools:
+  #     prefix: t_
+  #     remove:
+  #       - "t_get_workflow_history"   # rarely useful in agent contexts

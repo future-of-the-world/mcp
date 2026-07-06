@@ -1,0 +1,17 @@
+{
+	"type": "object",
+	"properties": {
+		"url": {
+			"type": "string",
+			"description": "URL to fetch or a result ID (r_xxxxxxxxxxxx)"
+		},
+		"max_chars": {
+			"type": "integer",
+			"description": "Maximum characters to return"
+		},
+		"cursor": {
+			"type": "string",
+			"description": "Opaque body cursor for pagination"
+		}
+	}
+}

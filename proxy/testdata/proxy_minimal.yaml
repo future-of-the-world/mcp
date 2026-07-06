@@ -1,0 +1,3 @@
+tools:
+  proxy/remote:
+    url: http://localhost:9090/mcp

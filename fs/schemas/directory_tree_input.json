@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Root directory of the tree."
+    },
+    "max_depth": {
+      "type": "integer",
+      "description": "Maximum recursion depth. Default 8. Beyond this depth, files are listed without descending further."
+    }
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

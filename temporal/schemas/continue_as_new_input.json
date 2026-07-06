@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string",
+      "description": "Workflow execution id to signal with continue-as-new."
+    },
+    "signal_name": {
+      "type": "string",
+      "description": "Signal name the workflow listens for. The receiving workflow must call workflow.NewContinueAsNewError."
+    },
+    "signal_args": {
+      "type": "array",
+      "description": "Positional args passed to the signal handler. Empty when the workflow doesn't need any.",
+      "items": {}
+    }
+  },
+  "required": ["workflow_id", "signal_name"]
+}

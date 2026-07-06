@@ -1,0 +1,51 @@
+{
+  "type": "object",
+  "properties": {
+    "root": {
+      "type": "string",
+      "description": "Directory to search under. Must resolve inside the configured allowed_paths."
+    },
+    "pattern": {
+      "type": "string",
+      "description": "Go RE2 regex pattern to match against each line. Backreferences and lookahead are not supported by RE2; use a simpler form when the migration from another engine changes the syntax."
+    },
+    "include_pattern": {
+      "type": "string",
+      "description": "Glob matched against the full path of each candidate file (filepath.Match semantics: '*' matches any sequence, '?' matches a single character). Default: match every file."
+    },
+    "case_sensitive": {
+      "type": "boolean",
+      "description": "Whether the regex match is case-sensitive. Default false (case-insensitive)."
+    },
+    "max_depth": {
+      "type": "integer",
+      "description": "Maximum recursion depth below root. Default 8."
+    },
+    "max_results": {
+      "type": "integer",
+      "description": "Hard cap on the number of match entries returned in the response. When the cap is hit, top-level truncated=true. Default 100."
+    },
+    "context_lines": {
+      "type": "integer",
+      "description": "Number of context lines to include before and after each match. 0 disables context (matches only). Default 0."
+    },
+    "max_line_bytes": {
+      "type": "integer",
+      "description": "Hard cap on the size of an individual line's content in the response. Lines exceeding this are truncated with per-entry truncated=true. Default 4096."
+    },
+    "use_gitignore": {
+      "type": "boolean",
+      "description": "Honor .gitignore files in root and parents. Default true."
+    },
+    "respect_default_ignores": {
+      "type": "boolean",
+      "description": "Skip a hardcoded list of noise directories (.git, .hg, .svn, node_modules, vendor, target, dist, build, .next, .turbo, .cache) and hidden files/dirs. Default true."
+    },
+    "literal": {
+      "type": "boolean",
+      "description": "If true, the pattern is matched as a literal substring via bytes.Index; regex metacharacters ('.', '*', '[', etc.) are treated as ordinary characters. The whole pattern is the search needle, so extractLiteralPrefix is not consulted. Default false."
+    }
+  },
+  "required": ["root", "pattern"],
+  "additionalProperties": false
+}

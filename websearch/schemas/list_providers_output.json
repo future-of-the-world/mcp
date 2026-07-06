@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"providers": {
+			"type": "array",
+			"description": "Registered search provider names",
+			"items": {"type": "string"}
+		},
+		"default": {
+			"type": "string",
+			"description": "Name of the default provider"
+		}
+	}
+}

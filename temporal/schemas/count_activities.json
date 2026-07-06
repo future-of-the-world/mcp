@@ -1,0 +1,9 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Visibility filter in Temporal query syntax. Omit to count all standalone activities in the namespace."
+		}
+	}
+}

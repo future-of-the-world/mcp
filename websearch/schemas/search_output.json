@@ -1,0 +1,25 @@
+{
+	"type": "object",
+	"properties": {
+		"results": {
+			"type": "array",
+			"description": "Search results",
+			"items": {
+				"type": "object",
+				"properties": {
+					"title":       {"type": "string"},
+					"url":         {"type": "string"},
+					"snippet":     {"type": "string"},
+					"raw_url":     {"type": "string"},
+					"description": {"type": "string"}
+				}
+			}
+		},
+		"cached":      {"type": "boolean"},
+		"provider":    {"type": "string"},
+		"query":       {"type": "string"},
+		"count":       {"type": "integer"},
+		"offset":      {"type": "integer"},
+		"next_cursor": {"type": "string"}
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to the file. May be absolute (when it lives inside one of the configured allowed_paths) or relative to one of them."
+    },
+    "start_line": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Optional 1-indexed inclusive start line for a line-range read. Omit (or pair with end_line) to read the whole file. Combined with end_line: returned slice is lines [start_line, end_line]. Without end_line: returned slice is lines [start_line, EOF]. Supported for UTF-8 text files only; binary files reject any line-range argument."
+    },
+    "end_line": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Optional 1-indexed inclusive end line for a line-range read. Omit (or pair with start_line) to read the whole file. Combined with start_line: returned slice is lines [start_line, end_line]. Without start_line: returned slice is lines [1, end_line]. If end_line exceeds the file's line count, it is silently clamped to the last line. Supported for UTF-8 text files only; binary files reject any line-range argument."
+    }
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

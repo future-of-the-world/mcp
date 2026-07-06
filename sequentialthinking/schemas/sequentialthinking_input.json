@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "thought": {
+      "type": "string",
+      "description": "Your current thinking step"
+    },
+    "nextThoughtNeeded": {
+      "type": "boolean",
+      "description": "Whether another thought step is needed"
+    },
+    "thoughtNumber": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Current thought number (numeric value, e.g., 1, 2, 3)"
+    },
+    "totalThoughts": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Estimated total thoughts needed (numeric value, e.g., 5, 10)"
+    },
+    "isRevision": {
+      "type": "boolean",
+      "description": "Whether this revises previous thinking"
+    },
+    "revisesThought": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Which thought is being reconsidered"
+    },
+    "branchFromThought": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Branching point thought number"
+    },
+    "branchId": {
+      "type": "string",
+      "description": "Branch identifier"
+    },
+    "needsMoreThoughts": {
+      "type": "boolean",
+      "description": "If more thoughts are needed"
+    }
+  },
+  "required": ["thought", "nextThoughtNeeded", "thoughtNumber", "totalThoughts"],
+  "additionalProperties": false
+}

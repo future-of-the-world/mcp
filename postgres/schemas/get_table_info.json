@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"schema": {
+			"type": "string",
+			"description": "Schema name"
+		},
+		"table": {
+			"type": "string",
+			"description": "Table name"
+		}
+	},
+	"required": ["schema", "table"]
+}

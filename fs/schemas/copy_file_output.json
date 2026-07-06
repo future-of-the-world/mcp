@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "source": {"type": "string", "description": "Original source path."},
+    "destination": {"type": "string", "description": "Absolute path of the new copy."},
+    "bytes_copied": {"type": "integer", "description": "Number of bytes copied."}
+  },
+  "required": ["source", "destination", "bytes_copied"],
+  "additionalProperties": false
+}

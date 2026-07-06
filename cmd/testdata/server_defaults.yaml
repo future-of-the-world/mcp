@@ -1,0 +1,7 @@
+sources:
+  test:
+    type: http
+    connect:
+      url: "http://example.com/test"
+      method: "GET"
+      description: "A test tool"

@@ -1,0 +1,17 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {
+			"type": "string",
+			"description": "Echoes the activity_id argument."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Resolved run ID. May differ from the requested one when run_id was omitted (the server returned the most recent)."
+		},
+		"result": {
+			"description": "JSON-decoded return value of the activity. The shape depends on the activity's Go return type."
+		}
+	},
+	"required": ["activity_id", "result"]
+}

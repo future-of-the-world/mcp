@@ -1,0 +1,36 @@
+{
+  "type": "object",
+  "properties": {
+    "matches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string", "description": "Absolute path of the file containing the line."},
+          "line": {"type": "integer", "description": "1-based line number within the file."},
+          "column": {"type": "integer", "description": "1-based byte offset of the regex match start within the line. 0 for non-match context entries."},
+          "type": {"type": "string", "enum": ["match", "before", "after"], "description": "Role of this line in the output: a regex match, a context line before a match, or a context line after a match. A line that is both a match and context for an adjacent match is emitted once with type='match'."},
+          "content": {"type": "string", "description": "Text of the line, possibly truncated to max_line_bytes."},
+          "truncated": {"type": "boolean", "description": "True when content was clipped to max_line_bytes."}
+        },
+        "required": ["path", "line", "column", "type", "content", "truncated"],
+        "additionalProperties": false
+      },
+      "description": "Match entries plus optional context lines, sorted by (path, line) ascending. Each line is emitted at most once per file."
+    },
+    "truncated": {
+      "type": "boolean",
+      "description": "True when the match cap (max_results) was reached and some matches were dropped."
+    },
+    "total_files_searched": {
+      "type": "integer",
+      "description": "Number of files that were opened and scanned. Skipped files (binary, ignored, or outside allowed_paths) are not counted."
+    },
+    "total_matches": {
+      "type": "integer",
+      "description": "Total number of regex matches across all files. Counts type=='match' entries only — context lines are not included."
+    }
+  },
+  "required": ["matches", "truncated", "total_files_searched", "total_matches"],
+  "additionalProperties": false
+}

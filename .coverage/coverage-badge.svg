@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="118" height="20"
+     role="img" aria-label="coverage: 85.5%">
+  <title>coverage: 85.5%</title>
+  <clipPath id="r">
+    <rect width="118" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="68" height="20" fill="#555"/>
+    <rect x="68" width="50" height="20" fill="#44cc11"/>
+  </g>
+  <g fill="#fff" text-anchor="middle"
+     font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
+     text-rendering="geometricPrecision" font-size="110">
+    <text x="340" y="150" transform="scale(.1)" textLength="490"
+          fill="#fff" aria-hidden="true">coverage</text>
+    <text x="930" y="150" transform="scale(.1)" textLength="310"
+          fill="#fff" aria-hidden="true">85.5%</text>
+  </g>
+</svg>

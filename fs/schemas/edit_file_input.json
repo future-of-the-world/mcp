@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to the text file to edit. May be absolute or relative to one of the configured allowed_paths."
+    },
+    "old_text": {
+      "type": "string",
+      "description": "Exact substring to replace. Must occur exactly once in the file."
+    },
+    "new_text": {
+      "type": "string",
+      "description": "Replacement text."
+    }
+  },
+  "required": ["path", "old_text", "new_text"],
+  "additionalProperties": false
+}

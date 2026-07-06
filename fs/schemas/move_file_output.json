@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "source": {"type": "string", "description": "Original source path."},
+    "destination": {"type": "string", "description": "New absolute path after move."}
+  },
+  "required": ["source", "destination"],
+  "additionalProperties": false
+}

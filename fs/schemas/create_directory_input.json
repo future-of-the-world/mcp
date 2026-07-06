@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Directory path to create. Intermediate directories are created as needed (mkdir -p semantics)."
+    }
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

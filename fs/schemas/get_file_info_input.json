@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to stat. Must be inside the configured allowed_paths."
+    }
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

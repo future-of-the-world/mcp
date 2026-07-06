@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "key_or_id":{"type":"string","description":"Issue key or numeric ID"},"fields":{"type":"string"}
+  },
+  "required":["key_or_id"]
+}

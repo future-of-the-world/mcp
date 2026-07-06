@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "executions": {
+      "type": "array",
+      "description": "Workflow execution summaries matching the query, in reverse-chronological order.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "workflow_id": {"type": "string"},
+          "run_id": {"type": "string"},
+          "workflow_type": {"type": "string"},
+          "status": {"type": "string"},
+          "start_time": {"type": "string"},
+          "close_time": {"type": "string"}
+        },
+        "required": ["workflow_id", "run_id", "workflow_type", "status"]
+      }
+    },
+    "next_page_token": {
+      "type": "string",
+      "description": "Opaque token for fetching the next page (base64-encoded). Absent when no more results are available."
+    }
+  },
+  "required": ["executions"]
+}

@@ -1,0 +1,20 @@
+{
+	"type": "object",
+	"properties": {
+		"repo_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Woodpecker repository id to trigger the pipeline on."
+		},
+		"branch": {
+			"type": "string",
+			"description": "Branch to run the pipeline on. Omit to use the repository's default_branch on the server."
+		},
+		"variables": {
+			"type": "object",
+			"description": "Key/value pairs passed to the pipeline as CI_* environment variables. Names are passed through unchanged.",
+			"additionalProperties": {"type": "string"}
+		}
+	},
+	"required": ["repo_id"]
+}

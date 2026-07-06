@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Absolute path of the edited file."
+    },
+    "replacements": {
+      "type": "integer",
+      "description": "Number of replacements applied. Always 1 on success; the request is rejected if old_text is not present exactly once."
+    }
+  },
+  "required": ["path", "replacements"],
+  "additionalProperties": false
+}

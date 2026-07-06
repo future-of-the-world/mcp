@@ -1,0 +1,16 @@
+{
+	"type": "object",
+	"properties": {
+		"repo_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Woodpecker repository id."
+		},
+		"pipeline_number": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Pipeline number to cancel."
+		}
+	},
+	"required": ["repo_id", "pipeline_number"]
+}

@@ -1,0 +1,15 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "SQL query to execute"
+		},
+		"params": {
+			"type": "array",
+			"description": "Query parameters for prepared statement placeholders",
+			"items": {}
+		}
+	},
+	"required": ["query"]
+}

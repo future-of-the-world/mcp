@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"created": {
+			"type": "boolean",
+			"description": "True when the Temporal server accepted the schedule. False is never returned today — failures surface as errors."
+		},
+		"schedule_id": {
+			"type": "string",
+			"description": "Echoes the schedule_id argument. Use this as the handle for pause_schedule / unpause_schedule / trigger_schedule / delete_schedule / describe_schedule."
+		}
+	},
+	"required": ["created", "schedule_id"]
+}

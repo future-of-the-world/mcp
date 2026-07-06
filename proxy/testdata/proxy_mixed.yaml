@@ -1,0 +1,8 @@
+tools:
+  http/api:
+    url: http://example.com/api
+    method: GET
+    description: Direct HTTP tool
+  proxy/remote:
+    url: http://localhost:8080/mcp
+    transport: streamable

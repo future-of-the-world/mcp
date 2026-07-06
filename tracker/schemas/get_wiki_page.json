@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "slug":{"type":"string","description":"Wiki page slug (URL path)"},"page_id":{"type":"integer","description":"Numeric page ID"}
+  },
+  "required":[]
+}

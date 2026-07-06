@@ -1,0 +1,70 @@
+{
+	"type": "object",
+	"properties": {
+		"tables": {
+			"type": "array",
+			"description": "List of tables with complete information",
+			"items": {
+				"type": "object",
+				"properties": {
+					"schema": {
+						"type": "string",
+						"description": "Schema name"
+					},
+					"name": {
+						"type": "string",
+						"description": "Table name"
+					},
+					"type": {
+						"type": "string",
+						"description": "Table type (BASE TABLE, VIEW, etc.)"
+					},
+					"comment": {
+						"type": "string",
+						"description": "Table comment"
+					},
+					"row_count_estimate": {
+						"type": "integer",
+						"description": "Estimated number of rows"
+					},
+					"columns": {
+						"type": "array",
+						"description": "List of columns with complete information",
+						"items": {
+							"type": "object"
+						}
+					},
+					"indexes": {
+						"type": "array",
+						"description": "List of indexes on the table",
+						"items": {
+							"type": "object"
+						}
+					},
+					"constraints": {
+						"type": "array",
+						"description": "List of table constraints",
+						"items": {
+							"type": "object"
+						}
+					},
+					"references": {
+						"type": "array",
+						"description": "Foreign key relationships to other tables",
+						"items": {
+							"type": "object"
+						}
+					},
+					"referenced_by": {
+						"type": "array",
+						"description": "Foreign key relationships from other tables",
+						"items": {
+							"type": "object"
+						}
+					}
+				}
+			}
+		}
+	},
+	"required": ["tables"]
+}

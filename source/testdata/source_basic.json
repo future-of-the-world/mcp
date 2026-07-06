@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "basic": {
+      "type": "postgres",
+      "connect": {
+        "datasource": "postgres://localhost:5432/test",
+        "timeout": "30s"
+      },
+      "tools": {
+        "prefix": "pg",
+        "remove": ["^get_"],
+        "read_only": true
+      }
+    }
+  }
+}

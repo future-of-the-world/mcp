@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "stdout": {
+      "type": "string",
+      "description": "Captured stdout. UTF-8 text in normal cases; prefixed with 'b64:' and base64-encoded when the output is not valid UTF-8."
+    },
+    "stderr": {
+      "type": "string",
+      "description": "Captured stderr. UTF-8 text in normal cases; prefixed with 'b64:' and base64-encoded when the output is not valid UTF-8."
+    },
+    "exit_code": {
+      "type": "integer",
+      "description": "Process exit code. -1 if the process was killed by a signal, by the timeout, or by any other non-exit error."
+    },
+    "duration_ms": {
+      "type": "integer",
+      "description": "Wall-clock duration of the invocation in milliseconds, including process startup and shutdown."
+    },
+    "truncated": {
+      "type": "boolean",
+      "description": "True if either stdout or stderr was cut at the connect.max_output_bytes cap."
+    }
+  },
+  "required": ["stdout", "stderr", "exit_code", "duration_ms", "truncated"],
+  "additionalProperties": false
+}

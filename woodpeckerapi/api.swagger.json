@@ -1,0 +1,6636 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Woodpecker CI API",
+    "description": "Woodpecker is a simple, yet powerful CI/CD engine with great extensibility.\nTo get a personal access token (PAT) for authentication, please log in your Woodpecker server,\nand go to you personal profile page, by clicking the user icon at the top right.",
+    "contact": {
+      "name": "Woodpecker CI",
+      "url": "https://woodpecker-ci.org/"
+    },
+    "version": "3.15.0"
+  },
+  "servers": [
+    {
+      "url": ""
+    }
+  ],
+  "paths": {
+    "/agents": {
+      "get": {
+        "tags": ["Agents"],
+        "summary": "List agents",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Agents"],
+        "summary": "Create a new agent",
+        "description": "Creates a new agent with a random token",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the agent's data (only 'name' and 'no_schedule' are read)",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "agent"
+      }
+    },
+    "/agents/{agent_id}": {
+      "get": {
+        "tags": ["Agents"],
+        "summary": "Get an agent",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "the agent's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Agents"],
+        "summary": "Delete an agent",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "the agent's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Agents"],
+        "summary": "Update an agent",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "the agent's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the agent's data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "agentData"
+      }
+    },
+    "/agents/{agent_id}/tasks": {
+      "get": {
+        "tags": ["Agents"],
+        "summary": "List agent tasks",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "the agent's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/badges/{repo_id}/cc.xml": {
+      "get": {
+        "tags": ["Badges"],
+        "summary": "Provide pipeline status information to the CCMenu tool",
+        "description": "CCMenu displays the pipeline status of projects on a CI server as an item in the Mac's menu bar.\nMore details on how to install, you can find at http://ccmenu.org/\nThe response format adheres to CCTray v1 Specification, https://cctray.org/v1/",
+        "parameters": [
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/badges/{repo_id}/status.svg": {
+      "get": {
+        "tags": ["Badges"],
+        "summary": "Get status of pipeline as SVG badge",
+        "parameters": [
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "List available pprof profiles (HTML)",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/block": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof stack traces that led to blocking on synchronization primitives",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/cmdline": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get the command line invocation of the current program",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/goroutine": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof stack traces of all current goroutines",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "debug",
+            "in": "query",
+            "description": "Use debug=2 as a query parameter to export in the same format as an un-recovered panic",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/heap": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof heap dump, a sampling of memory allocations of live objects",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "gc",
+            "in": "query",
+            "description": "You can specify gc=heap to run GC before taking the heap sample",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/profile": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof CPU profile",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug\nAfter you get the profile file, use the go tool pprof command to investigate the profile.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "seconds",
+            "in": "query",
+            "description": "You can specify the duration in the seconds GET parameter.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/symbol": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof program counters mapping to function names",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug\nLooks up the program counters listed in the request,\nresponding with a table mapping program counters to function names.\nThe requested program counters can be provided via GET + query parameters,\nor POST + body parameters. Program counters shall be space delimited.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof program counters mapping to function names",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug\nLooks up the program counters listed in the request,\nresponding with a table mapping program counters to function names.\nThe requested program counters can be provided via GET + query parameters,\nor POST + body parameters. Program counters shall be space delimited.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/threadcreate": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get pprof stack traces that led to the creation of new OS threads",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/debug/pprof/trace": {
+      "get": {
+        "tags": ["Process profiling and debugging"],
+        "summary": "Get a trace of execution of the current program",
+        "description": "Only available, when server was started with WOODPECKER_LOG_LEVEL=debug\nAfter you get the profile file, use the go tool pprof command to investigate the profile.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "seconds",
+            "in": "query",
+            "description": "You can specify the duration in the seconds GET parameter.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/forges": {
+      "get": {
+        "tags": ["Forges"],
+        "summary": "List forges",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Forge"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Forges"],
+        "summary": "Create a new forge",
+        "description": "Creates a new forge with a random token",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the forge's data (only 'name' and 'no_schedule' are read)",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgeWithOAuthClientSecret"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forge"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "forge"
+      }
+    },
+    "/forges/{forge_id}": {
+      "get": {
+        "tags": ["Forges"],
+        "summary": "Get a forge",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "forge_id",
+            "in": "path",
+            "description": "the forge's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forge"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Forges"],
+        "summary": "Delete a forge",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "forge_id",
+            "in": "path",
+            "description": "the forge's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Forges"],
+        "summary": "Update a forge",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "forge_id",
+            "in": "path",
+            "description": "the forge's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the forge's data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgeWithOAuthClientSecret"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forge"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "forgeData"
+      }
+    },
+    "/healthz": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Health information",
+        "description": "If everything is fine, just a 204 will be returned, a 500 signals server state is unhealthy.",
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/hook": {
+      "post": {
+        "tags": ["System"],
+        "summary": "Incoming webhook from forge",
+        "requestBody": {
+          "description": "the webhook payload; forge is automatically detected",
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "hook"
+      }
+    },
+    "/log-level": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Current log level",
+        "description": "Endpoint returns the current logging level. Requires admin rights.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "log-level": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["System"],
+        "summary": "Set log level",
+        "description": "Endpoint sets the current logging level. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the new log level, one of <debug,trace,info,warn,error,fatal,panic,disabled>",
+          "content": {
+            "*/*": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "log-level": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "log-level": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "log-level"
+      }
+    },
+    "/orgs": {
+      "get": {
+        "tags": ["Orgs"],
+        "summary": "List organizations",
+        "description": "Returns all registered orgs in the system. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Org"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orgs/lookup/{org_full_name}": {
+      "get": {
+        "tags": ["Orgs"],
+        "summary": "Lookup an organization by full name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_full_name",
+            "in": "path",
+            "description": "the organizations full name / slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Org"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orgs/{org_id}": {
+      "get": {
+        "tags": ["Organization"],
+        "summary": "Get an organization",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the organization's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Org"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Orgs"],
+        "summary": "Delete an organization",
+        "description": "Deletes the given org. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/orgs/{org_id}/agents": {
+      "get": {
+        "tags": ["Agents"],
+        "summary": "List agents for an organization",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the organization's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Agent"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Agents"],
+        "summary": "Create a new organization-scoped agent",
+        "description": "Creates a new agent with a random token, scoped to the specified organization",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the organization's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the agent's data (only 'name' and 'no_schedule' are read)",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "agent"
+      }
+    },
+    "/orgs/{org_id}/agents/{agent_id}": {
+      "delete": {
+        "tags": ["Agents"],
+        "summary": "Delete an organization-scoped agent",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the organization's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "the agent's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Agents"],
+        "summary": "Update an organization-scoped agent",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the organization's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "the agent's id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the agent's updated data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Agent"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Agent"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "agent"
+      }
+    },
+    "/orgs/{org_id}/permissions": {
+      "get": {
+        "tags": ["Organization permissions"],
+        "summary": "Get the permissions of the currently authenticated user for the given organization",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the organization's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OrgPerm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orgs/{org_id}/registries": {
+      "get": {
+        "tags": ["Organization registries"],
+        "summary": "List organization registries",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Registry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Organization registries"],
+        "summary": "Create an organization registry",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the new registry",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Registry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "registryData"
+      }
+    },
+    "/orgs/{org_id}/registries/{registry}": {
+      "get": {
+        "tags": ["Organization registries"],
+        "summary": "Get a organization registry by address",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry's address",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Organization registries"],
+        "summary": "Delete an organization registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Organization registries"],
+        "summary": "Update an organization registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the update registry data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Registry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "registryData"
+      }
+    },
+    "/orgs/{org_id}/secrets": {
+      "get": {
+        "tags": ["Organization secrets"],
+        "summary": "List organization secrets",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Secret"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Organization secrets"],
+        "summary": "Create an organization secret",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the new secret",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Secret"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "secretData"
+      }
+    },
+    "/orgs/{org_id}/secrets/{secret}": {
+      "get": {
+        "tags": ["Organization secrets"],
+        "summary": "Get a organization secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secret",
+            "in": "path",
+            "description": "the secret's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Organization secrets"],
+        "summary": "Delete an organization secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secret",
+            "in": "path",
+            "description": "the secret's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Organization secrets"],
+        "summary": "Update an organization secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "org_id",
+            "in": "path",
+            "description": "the org's id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "secret",
+            "in": "path",
+            "description": "the secret's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the update secret data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/SecretPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "secretData"
+      }
+    },
+    "/pipelines": {
+      "get": {
+        "tags": ["Pipeline queues"],
+        "summary": "List pipelines in queue",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Feed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue/info": {
+      "get": {
+        "tags": ["Pipeline queues"],
+        "summary": "Get pipeline queue information",
+        "description": "Returns pipeline queue information with agent details",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueueInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/queue/norunningpipelines": {
+      "get": {
+        "tags": ["Pipeline queues"],
+        "summary": "Block til pipeline queue has a running item",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/queue/pause": {
+      "post": {
+        "tags": ["Pipeline queues"],
+        "summary": "Pause the pipeline queue",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/queue/resume": {
+      "post": {
+        "tags": ["Pipeline queues"],
+        "summary": "Resume the pipeline queue",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/registries": {
+      "get": {
+        "tags": ["Registries"],
+        "summary": "List global registries",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Registry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Registries"],
+        "summary": "Create a global registry",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the registry object data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Registry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "registry"
+      }
+    },
+    "/registries/{registry}": {
+      "get": {
+        "tags": ["Registries"],
+        "summary": "Get a global registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Registries"],
+        "summary": "Delete a global registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Registries"],
+        "summary": "Update a global registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the registry's data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Registry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "registryData"
+      }
+    },
+    "/repos": {
+      "get": {
+        "tags": ["Repositories"],
+        "summary": "List all repositories on the server",
+        "description": "Returns a list of all repositories. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "active",
+            "in": "query",
+            "description": "only list active repos",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Repo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Repositories"],
+        "summary": "Activate a repository",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "forge_remote_id",
+            "in": "query",
+            "description": "the id of a repository at the forge",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/lookup/{repo_full_name}": {
+      "get": {
+        "tags": ["Repositories"],
+        "summary": "Lookup a repository by full name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_full_name",
+            "in": "path",
+            "description": "the repository full name / slug",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/repair": {
+      "post": {
+        "tags": ["Repositories"],
+        "summary": "Repair all repositories on the server",
+        "description": "Executes a repair process on all repositories. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}": {
+      "get": {
+        "tags": ["Repositories"],
+        "summary": "Get a repository",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Repositories"],
+        "summary": "Delete a repository",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Repositories"],
+        "summary": "Update a repository",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the repository's information",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/RepoPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repo"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "repo"
+      }
+    },
+    "/repos/{repo_id}/branches": {
+      "get": {
+        "tags": ["Repositories"],
+        "summary": "Get branches of a repository",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/chown": {
+      "post": {
+        "tags": ["Repositories"],
+        "summary": "Change a repository's owner to the currently authenticated user",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Repo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/cron": {
+      "get": {
+        "tags": ["Repository cron jobs"],
+        "summary": "List cron jobs",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Cron"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Repository cron jobs"],
+        "summary": "Create a cron job",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the new cron job",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Cron"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cron"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "cronJob"
+      }
+    },
+    "/repos/{repo_id}/cron/{cron}": {
+      "get": {
+        "tags": ["Repository cron jobs"],
+        "summary": "Get a cron job",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cron",
+            "in": "path",
+            "description": "the cron job id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cron"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Repository cron jobs"],
+        "summary": "Start a cron job now",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cron",
+            "in": "path",
+            "description": "the cron job id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pipeline"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Repository cron jobs"],
+        "summary": "Delete a cron job",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cron",
+            "in": "path",
+            "description": "the cron job id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Repository cron jobs"],
+        "summary": "Update a cron job",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cron",
+            "in": "path",
+            "description": "the cron job id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the cron job data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/CronPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cron"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "cronJob"
+      }
+    },
+    "/repos/{repo_id}/logs/{pipeline_number}": {
+      "delete": {
+        "tags": ["Pipeline logs"],
+        "summary": "Deletes all logs of a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/logs/{pipeline_number}/{step_id}": {
+      "get": {
+        "tags": ["Pipeline logs"],
+        "summary": "Get logs for a pipeline step",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "step_id",
+            "in": "path",
+            "description": "the step id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogEntry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Pipeline logs"],
+        "summary": "Delete step logs of a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "step_id",
+            "in": "path",
+            "description": "the step id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/move": {
+      "post": {
+        "tags": ["Repositories"],
+        "summary": "Move a repository to a new owner",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "the username to move the repository to",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/permissions": {
+      "get": {
+        "tags": ["Repositories"],
+        "summary": "Check current authenticated users access to the repository",
+        "description": "The repository permission, according to the used access token.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Perm"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pipelines": {
+      "get": {
+        "tags": ["Pipelines"],
+        "summary": "List repository pipelines",
+        "description": "Get a list of pipelines for a repository.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "description": "only return pipelines before this RFC3339 date",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "description": "only return pipelines after this RFC3339 date",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "description": "filter pipelines by branch",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "event",
+            "in": "query",
+            "description": "filter pipelines by webhook events (comma separated)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ref",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "filter pipelines by status",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pipeline"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Pipelines"],
+        "summary": "Trigger a manual pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the options for the pipeline to run",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/PipelineOptions"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pipeline"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "options"
+      }
+    },
+    "/repos/{repo_id}/pipelines/{pipeline_number}": {
+      "get": {
+        "tags": ["Pipelines"],
+        "summary": "Get a repositories pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline, OR 'latest'",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pipeline"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Pipelines"],
+        "summary": "Restart a pipeline",
+        "description": "Restarts a pipeline optional with altered event, deploy or environment",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "event",
+            "in": "query",
+            "description": "override the event type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "deploy_to",
+            "in": "query",
+            "description": "override the target deploy value",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pipeline"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Pipelines"],
+        "summary": "Delete a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pipelines/{pipeline_number}/approve": {
+      "post": {
+        "tags": ["Pipelines"],
+        "summary": "Approve and start a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pipeline"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pipelines/{pipeline_number}/cancel": {
+      "post": {
+        "tags": ["Pipelines"],
+        "summary": "Cancel a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pipelines/{pipeline_number}/config": {
+      "get": {
+        "tags": ["Pipelines"],
+        "summary": "Get configuration files for a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Config"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pipelines/{pipeline_number}/decline": {
+      "post": {
+        "tags": ["Pipelines"],
+        "summary": "Decline a pipeline",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pipeline"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pipelines/{pipeline_number}/metadata": {
+      "get": {
+        "tags": ["Pipelines"],
+        "summary": "Get metadata for a pipeline or a specific workflow, including previous pipeline info",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline_number",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/metadata.Metadata"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/pull_requests": {
+      "get": {
+        "tags": ["Repositories"],
+        "summary": "List active pull requests of a repository",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PullRequest"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/registries": {
+      "get": {
+        "tags": ["Repository registries"],
+        "summary": "List registries",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Registry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Repository registries"],
+        "summary": "Create a registry",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the new registry data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Registry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "registry"
+      }
+    },
+    "/repos/{repo_id}/registries/{registry}": {
+      "get": {
+        "tags": ["Repository registries"],
+        "summary": "Get a registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Repository registries"],
+        "summary": "Delete a registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Repository registries"],
+        "summary": "Update a registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "registry",
+            "in": "path",
+            "description": "the registry name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the attributes for the registry",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Registry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "registryData"
+      }
+    },
+    "/repos/{repo_id}/repair": {
+      "post": {
+        "tags": ["Repositories"],
+        "summary": "Delete a registry by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/repos/{repo_id}/secrets": {
+      "get": {
+        "tags": ["Repository secrets"],
+        "summary": "List repository secrets",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registry"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Repository secrets"],
+        "summary": "Create a repository secret",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the new secret",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Secret"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "secret"
+      }
+    },
+    "/repos/{repo_id}/secrets/{secretName}": {
+      "get": {
+        "tags": ["Repository secrets"],
+        "summary": "Get a repository secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "secretName",
+            "in": "path",
+            "description": "the secret name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Repository secrets"],
+        "summary": "Delete a repository secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "secretName",
+            "in": "path",
+            "description": "the secret name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Repository secrets"],
+        "summary": "Update a repository secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "secretName",
+            "in": "path",
+            "description": "the secret name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the secret itself",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/SecretPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "secret"
+      }
+    },
+    "/secrets": {
+      "get": {
+        "tags": ["Secrets"],
+        "summary": "List global secrets",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Secret"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Secrets"],
+        "summary": "Create a global secret",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the secret object data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/Secret"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "secret"
+      }
+    },
+    "/secrets/{secret}": {
+      "get": {
+        "tags": ["Secrets"],
+        "summary": "Get a global secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "secret",
+            "in": "path",
+            "description": "the secret's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Secrets"],
+        "summary": "Delete a global secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "secret",
+            "in": "path",
+            "description": "the secret's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Secrets"],
+        "summary": "Update a global secret by name",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "secret",
+            "in": "path",
+            "description": "the secret's name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the secret's data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/SecretPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Secret"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "secretData"
+      }
+    },
+    "/stream/events": {
+      "get": {
+        "tags": ["Events"],
+        "summary": "Stream events like pipeline updates",
+        "description": "With quic and http2 support",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/stream/logs/{repo_id}/{pipeline}/{step_id}": {
+      "get": {
+        "tags": ["Pipeline logs"],
+        "summary": "Stream logs of a pipeline step",
+        "parameters": [
+          {
+            "name": "repo_id",
+            "in": "path",
+            "description": "the repository id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pipeline",
+            "in": "path",
+            "description": "the number of the pipeline",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "step_id",
+            "in": "path",
+            "description": "the step id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/user": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get the currently authenticated user",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/feed": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get the currently authenticated users pipeline feed",
+        "description": "The feed lists the most recent pipeline for the currently authenticated user.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Feed"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/repos": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get user's repositories",
+        "description": "Retrieve the currently authenticated User's Repository list",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "all",
+            "in": "query",
+            "description": "query all repos, including inactive ones",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "filter repos by name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RepoLastPipeline"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user/token": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Return the token of the current user as string",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      },
+      "delete": {
+        "tags": ["User"],
+        "summary": "Reset a token",
+        "description": "Reset's the current personal access token of the user and returns a new one.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "List users",
+        "description": "Returns all registered, active users in the system. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "for response pagination, page offset number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "for response pagination, max items per page",
+            "schema": {
+              "type": "integer",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a user",
+        "description": "Creates a new user account with the specified external login. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the user's data",
+          "content": {
+            "*/*": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "user"
+      }
+    },
+    "/users/{login}": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get a user",
+        "description": "Returns a user with the specified login name. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "the user's login name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "forge_id",
+            "in": "query",
+            "description": "specify forge (else default will be used)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "forge_remote_id",
+            "in": "query",
+            "description": "specify user id at forge (else fallback to login)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Delete a user",
+        "description": "Deletes the given user. Requires admin rights. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "the user's login name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "forge_id",
+            "in": "query",
+            "description": "specify forge (else default will be used)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "forge_remote_id",
+            "in": "query",
+            "description": "specify user id at forge (else fallback to login)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Users"],
+        "summary": "Update a user",
+        "description": "Changes the data of an existing user. Requires admin rights.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Insert your personal access token",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "Bearer <personal access token>"
+            }
+          },
+          {
+            "name": "login",
+            "in": "path",
+            "description": "the user's login of the user to update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "the user's data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "user"
+      }
+    },
+    "/version": {
+      "get": {
+        "tags": ["System"],
+        "summary": "Get version",
+        "description": "Endpoint returns the server version and build information.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Agent": {
+        "type": "object",
+        "properties": {
+          "backend": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "custom_labels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "integer"
+          },
+          "last_contact": {
+            "type": "integer"
+          },
+          "last_work": {
+            "type": "integer",
+            "description": "last time the agent did something, this value is used to determine if the agent is still doing work used by the autoscaler"
+          },
+          "name": {
+            "type": "string"
+          },
+          "no_schedule": {
+            "type": "boolean"
+          },
+          "org_id": {
+            "type": "integer",
+            "description": "OrgID is counted as unset if set to -1, this is done to ensure a new(Agent) still enforce the OrgID check by default"
+          },
+          "owner_id": {
+            "type": "integer"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "CancelInfo": {
+        "type": "object",
+        "properties": {
+          "canceled_by_step": {
+            "type": "string"
+          },
+          "canceled_by_user": {
+            "type": "string"
+          },
+          "superseded_by": {
+            "type": "integer"
+          }
+        }
+      },
+      "Config": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "hash": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Cron": {
+        "type": "object",
+        "properties": {
+          "branch": {
+            "type": "string"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "creator_id": {
+            "type": "integer",
+            "description": "TODO: drop with next major version"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "next_exec": {
+            "type": "integer"
+          },
+          "repo_id": {
+            "type": "integer"
+          },
+          "schedule": {
+            "type": "string",
+            "description": "@weekly,\t3min, ..."
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CronPatch": {
+        "type": "object",
+        "properties": {
+          "branch": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Feed": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "author_avatar": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "event": {
+            "type": "string"
+          },
+          "finished": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "refspec": {
+            "type": "string"
+          },
+          "repo_id": {
+            "type": "integer"
+          },
+          "started": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "Forge": {
+        "type": "object",
+        "properties": {
+          "additional_options": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "client": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "oauth_host": {
+            "type": "string",
+            "description": "public url for oauth if different from url"
+          },
+          "skip_verify": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/model.ForgeType"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "ForgeWithOAuthClientSecret": {
+        "type": "object",
+        "properties": {
+          "additional_options": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "client": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "oauth_client_secret": {
+            "type": "string"
+          },
+          "oauth_host": {
+            "type": "string",
+            "description": "public url for oauth if different from url"
+          },
+          "skip_verify": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/model.ForgeType"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "LogEntry": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string",
+            "format": "byte"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "line": {
+            "type": "integer"
+          },
+          "step_id": {
+            "type": "integer"
+          },
+          "time": {
+            "type": "integer"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LogEntryType"
+          }
+        }
+      },
+      "LogEntryType": {
+        "type": "integer",
+        "enum": [0, 1, 2, 3, 4],
+        "x-enum-varnames": [
+          "LogEntryStdout",
+          "LogEntryStderr",
+          "LogEntryExitCode",
+          "LogEntryMetadata",
+          "LogEntryProgress"
+        ]
+      },
+      "Org": {
+        "type": "object",
+        "properties": {
+          "forge_id": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_user": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "OrgPerm": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean"
+          },
+          "member": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Perm": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "pull": {
+            "type": "boolean"
+          },
+          "push": {
+            "type": "boolean"
+          },
+          "synced": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          }
+        }
+      },
+      "Pipeline": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "author_avatar": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "cancel_info": {
+            "$ref": "#/components/schemas/CancelInfo"
+          },
+          "changed_files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "commit": {
+            "type": "string"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "cron": {
+            "type": "string",
+            "description": "name of the cron job"
+          },
+          "deploy_task": {
+            "type": "string"
+          },
+          "deploy_to": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/errors.PipelineError"
+            }
+          },
+          "event": {
+            "$ref": "#/components/schemas/WebhookEvent"
+          },
+          "event_reason": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "finished": {
+            "type": "integer"
+          },
+          "forge_url": {
+            "type": "string"
+          },
+          "from_fork": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "is_prerelease": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "parent": {
+            "type": "integer"
+          },
+          "pr_labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "pr_milestone": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "refspec": {
+            "type": "string"
+          },
+          "rerun_count": {
+            "type": "integer"
+          },
+          "reviewed": {
+            "type": "integer"
+          },
+          "reviewed_by": {
+            "type": "string"
+          },
+          "sender": {
+            "type": "string",
+            "description": "uses reported user for webhooks and name of cron for cron pipelines"
+          },
+          "started": {
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusValue"
+          },
+          "timestamp": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "version": {
+            "type": "string"
+          },
+          "workflows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/model.Workflow"
+            }
+          }
+        }
+      },
+      "PipelineOptions": {
+        "type": "object",
+        "properties": {
+          "branch": {
+            "type": "string"
+          },
+          "variables": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PullRequest": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      },
+      "QueueInfo": {
+        "type": "object",
+        "properties": {
+          "paused": {
+            "type": "boolean"
+          },
+          "pending": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/model.QueueTask"
+            }
+          },
+          "running": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/model.QueueTask"
+            }
+          },
+          "stats": {
+            "type": "object",
+            "properties": {
+              "pending_count": {
+                "type": "integer"
+              },
+              "running_count": {
+                "type": "integer"
+              },
+              "waiting_on_deps_count": {
+                "type": "integer"
+              },
+              "worker_count": {
+                "type": "integer"
+              }
+            }
+          },
+          "waiting_on_deps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/model.QueueTask"
+            }
+          }
+        }
+      },
+      "Registry": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "password": {
+            "type": "string"
+          },
+          "readonly": {
+            "type": "boolean"
+          },
+          "repo_id": {
+            "type": "integer"
+          },
+          "username": {
+            "type": "string"
+          }
+        }
+      },
+      "Repo": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "allow_deploy": {
+            "type": "boolean"
+          },
+          "allow_pr": {
+            "type": "boolean"
+          },
+          "approval_allowed_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "cancel_previous_pipeline_events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookEvent"
+            }
+          },
+          "clone_url": {
+            "type": "string"
+          },
+          "clone_url_ssh": {
+            "type": "string"
+          },
+          "config_extension_endpoint": {
+            "type": "string"
+          },
+          "config_extension_exclusive": {
+            "type": "boolean"
+          },
+          "config_extension_netrc": {
+            "type": "boolean"
+          },
+          "config_file": {
+            "type": "string"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "forge_id": {
+            "type": "integer"
+          },
+          "forge_remote_id": {
+            "type": "string",
+            "description": "ForgeRemoteID is the unique identifier for the repository on the forge."
+          },
+          "forge_url": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "has_forge_name_conflict": {
+            "type": "boolean",
+            "description": "HasForgeNameConflict is true if forge returned a repo with same name but different forge remote id"
+          },
+          "has_no_forge_repo": {
+            "type": "boolean",
+            "description": "HasNoForgeRepo is true if repo only exist in the woodpecker store and not at the forge anymore"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "netrc_trusted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "pr_enabled": {
+            "type": "boolean"
+          },
+          "private": {
+            "type": "boolean"
+          },
+          "registry_extension_endpoint": {
+            "type": "string"
+          },
+          "registry_extension_netrc": {
+            "type": "boolean"
+          },
+          "require_approval": {
+            "$ref": "#/components/schemas/model.ApprovalMode"
+          },
+          "secret_extension_endpoint": {
+            "type": "string"
+          },
+          "secret_extension_netrc": {
+            "type": "boolean"
+          },
+          "timeout": {
+            "type": "integer"
+          },
+          "trusted": {
+            "$ref": "#/components/schemas/model.TrustedConfiguration"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/RepoVisibility"
+          }
+        }
+      },
+      "RepoLastPipeline": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "allow_deploy": {
+            "type": "boolean"
+          },
+          "allow_pr": {
+            "type": "boolean"
+          },
+          "approval_allowed_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "avatar_url": {
+            "type": "string"
+          },
+          "cancel_previous_pipeline_events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookEvent"
+            }
+          },
+          "clone_url": {
+            "type": "string"
+          },
+          "clone_url_ssh": {
+            "type": "string"
+          },
+          "config_extension_endpoint": {
+            "type": "string"
+          },
+          "config_extension_exclusive": {
+            "type": "boolean"
+          },
+          "config_extension_netrc": {
+            "type": "boolean"
+          },
+          "config_file": {
+            "type": "string"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "forge_id": {
+            "type": "integer"
+          },
+          "forge_remote_id": {
+            "type": "string",
+            "description": "ForgeRemoteID is the unique identifier for the repository on the forge."
+          },
+          "forge_url": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "has_forge_name_conflict": {
+            "type": "boolean",
+            "description": "HasForgeNameConflict is true if forge returned a repo with same name but different forge remote id"
+          },
+          "has_no_forge_repo": {
+            "type": "boolean",
+            "description": "HasNoForgeRepo is true if repo only exist in the woodpecker store and not at the forge anymore"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "last_pipeline": {
+            "$ref": "#/components/schemas/Pipeline"
+          },
+          "name": {
+            "type": "string"
+          },
+          "netrc_trusted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "pr_enabled": {
+            "type": "boolean"
+          },
+          "private": {
+            "type": "boolean"
+          },
+          "registry_extension_endpoint": {
+            "type": "string"
+          },
+          "registry_extension_netrc": {
+            "type": "boolean"
+          },
+          "require_approval": {
+            "$ref": "#/components/schemas/model.ApprovalMode"
+          },
+          "secret_extension_endpoint": {
+            "type": "string"
+          },
+          "secret_extension_netrc": {
+            "type": "boolean"
+          },
+          "timeout": {
+            "type": "integer"
+          },
+          "trusted": {
+            "$ref": "#/components/schemas/model.TrustedConfiguration"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/RepoVisibility"
+          }
+        }
+      },
+      "RepoPatch": {
+        "type": "object",
+        "properties": {
+          "allow_deploy": {
+            "type": "boolean"
+          },
+          "allow_pr": {
+            "type": "boolean"
+          },
+          "approval_allowed_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cancel_previous_pipeline_events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookEvent"
+            }
+          },
+          "config_extension_endpoint": {
+            "type": "string"
+          },
+          "config_extension_exclusive": {
+            "type": "boolean"
+          },
+          "config_extension_netrc": {
+            "type": "boolean"
+          },
+          "config_file": {
+            "type": "string"
+          },
+          "netrc_trusted": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "registry_extension_endpoint": {
+            "type": "string"
+          },
+          "registry_extension_netrc": {
+            "type": "boolean"
+          },
+          "require_approval": {
+            "type": "string"
+          },
+          "secret_extension_endpoint": {
+            "type": "string"
+          },
+          "secret_extension_netrc": {
+            "type": "boolean"
+          },
+          "timeout": {
+            "type": "integer"
+          },
+          "trusted": {
+            "$ref": "#/components/schemas/model.TrustedConfigurationPatch"
+          },
+          "visibility": {
+            "type": "string"
+          }
+        }
+      },
+      "RepoVisibility": {
+        "type": "string",
+        "enum": ["public", "private", "internal"],
+        "x-enum-varnames": [
+          "VisibilityPublic",
+          "VisibilityPrivate",
+          "VisibilityInternal"
+        ]
+      },
+      "Secret": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookEvent"
+            }
+          },
+          "id": {
+            "type": "integer"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "repo_id": {
+            "type": "integer"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "SecretPatch": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WebhookEvent"
+            }
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "StatusValue": {
+        "type": "string",
+        "enum": [
+          "skipped",
+          "pending",
+          "running",
+          "success",
+          "failure",
+          "killed",
+          "canceled",
+          "error",
+          "blocked",
+          "declined",
+          "created"
+        ],
+        "x-enum-comments": {
+          "StatusBlocked": "waiting for approval",
+          "StatusCanceled": "canceled but hasn't been started",
+          "StatusCreated": "created / internal use only",
+          "StatusDeclined": "blocked and declined",
+          "StatusError": "error with the config / while parsing / some other system problem",
+          "StatusFailure": "failed to finish (exit code != 0)",
+          "StatusKilled": "killed by user",
+          "StatusPending": "pending to be executed",
+          "StatusRunning": "currently running",
+          "StatusSkipped": "skipped as per condition of current workflow failed/success state",
+          "StatusSuccess": "successfully finished"
+        },
+        "x-enum-descriptions": [
+          "skipped as per condition of current workflow failed/success state",
+          "pending to be executed",
+          "currently running",
+          "successfully finished",
+          "failed to finish (exit code != 0)",
+          "killed by user",
+          "canceled but hasn't been started",
+          "error with the config / while parsing / some other system problem",
+          "waiting for approval",
+          "blocked and declined",
+          "created / internal use only"
+        ],
+        "x-enum-varnames": [
+          "StatusSkipped",
+          "StatusPending",
+          "StatusRunning",
+          "StatusSuccess",
+          "StatusFailure",
+          "StatusKilled",
+          "StatusCanceled",
+          "StatusCreated",
+          "StatusError",
+          "StatusBlocked",
+          "StatusDeclined"
+        ]
+      },
+      "Step": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "finished": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pid": {
+            "type": "integer"
+          },
+          "pipeline_id": {
+            "type": "integer"
+          },
+          "ppid": {
+            "type": "integer"
+          },
+          "started": {
+            "type": "integer"
+          },
+          "state": {
+            "$ref": "#/components/schemas/StatusValue"
+          },
+          "type": {
+            "$ref": "#/components/schemas/StepType"
+          },
+          "uuid": {
+            "type": "string"
+          }
+        }
+      },
+      "StepType": {
+        "type": "string",
+        "enum": ["clone", "service", "plugin", "commands", "cache"],
+        "x-enum-varnames": [
+          "StepTypeClone",
+          "StepTypeService",
+          "StepTypePlugin",
+          "StepTypeCommands",
+          "StepTypeCache"
+        ]
+      },
+      "Task": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "integer"
+          },
+          "dep_status": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/StatusValue"
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "pid": {
+            "type": "integer"
+          },
+          "pipeline_id": {
+            "type": "integer"
+          },
+          "repo_id": {
+            "type": "integer"
+          },
+          "run_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "admin": {
+            "type": "boolean",
+            "description": "Admin indicates the user is a system administrator.\n\nNOTE: If the username is part of the WOODPECKER_ADMIN\nenvironment variable, this value will be set to true on login."
+          },
+          "admin_env": {
+            "type": "boolean"
+          },
+          "avatar_url": {
+            "type": "string",
+            "description": "the avatar url for this user."
+          },
+          "email": {
+            "type": "string",
+            "description": "Email is the email address for this user.\n\nrequired: true"
+          },
+          "forge_id": {
+            "type": "integer"
+          },
+          "forge_remote_id": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "description": "the id for this user.\n\nrequired: true"
+          },
+          "login": {
+            "type": "string",
+            "description": "Login is the username for this user.\n\nrequired: true"
+          },
+          "org_id": {
+            "type": "integer",
+            "description": "OrgID is the of the user as model.Org."
+          }
+        }
+      },
+      "WebhookEvent": {
+        "type": "string",
+        "enum": [
+          "push",
+          "pull_request",
+          "pull_request_closed",
+          "pull_request_metadata",
+          "release",
+          "tag",
+          "deployment",
+          "cron",
+          "manual"
+        ],
+        "x-enum-varnames": [
+          "EventPush",
+          "EventPull",
+          "EventPullClosed",
+          "EventPullMetadata",
+          "EventTag",
+          "EventRelease",
+          "EventDeploy",
+          "EventCron",
+          "EventManual"
+        ]
+      },
+      "errors.PipelineError": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          },
+          "is_warning": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/errors.PipelineErrorType"
+          }
+        }
+      },
+      "errors.PipelineErrorType": {
+        "type": "string",
+        "enum": ["linter", "deprecation", "compiler", "generic", "bad_habit"],
+        "x-enum-comments": {
+          "PipelineErrorTypeBadHabit": "some bad-habit error",
+          "PipelineErrorTypeCompiler": "some error with the config semantics",
+          "PipelineErrorTypeDeprecation": "using some deprecated feature",
+          "PipelineErrorTypeGeneric": "some generic error",
+          "PipelineErrorTypeLinter": "some error with the config syntax"
+        },
+        "x-enum-descriptions": [
+          "some error with the config syntax",
+          "using some deprecated feature",
+          "some error with the config semantics",
+          "some generic error",
+          "some bad-habit error"
+        ],
+        "x-enum-varnames": [
+          "PipelineErrorTypeLinter",
+          "PipelineErrorTypeDeprecation",
+          "PipelineErrorTypeCompiler",
+          "PipelineErrorTypeGeneric",
+          "PipelineErrorTypeBadHabit"
+        ]
+      },
+      "metadata.Author": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "metadata.Commit": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "$ref": "#/components/schemas/metadata.Author"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "changed_files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_prerelease": {
+            "type": "boolean"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "message": {
+            "type": "string"
+          },
+          "milestone": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "refspec": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          }
+        }
+      },
+      "metadata.Event": {
+        "type": "string",
+        "enum": [
+          "push",
+          "pull_request",
+          "pull_request_closed",
+          "pull_request_metadata",
+          "tag",
+          "release",
+          "deployment",
+          "cron",
+          "manual"
+        ],
+        "x-enum-varnames": [
+          "EventPush",
+          "EventPull",
+          "EventPullClosed",
+          "EventPullMetadata",
+          "EventTag",
+          "EventRelease",
+          "EventDeploy",
+          "EventCron",
+          "EventManual"
+        ]
+      },
+      "metadata.Forge": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "metadata.Metadata": {
+        "type": "object",
+        "properties": {
+          "curr": {
+            "$ref": "#/components/schemas/metadata.Pipeline"
+          },
+          "forge": {
+            "$ref": "#/components/schemas/metadata.Forge"
+          },
+          "id": {
+            "type": "string"
+          },
+          "prev": {
+            "$ref": "#/components/schemas/metadata.Pipeline"
+          },
+          "repo": {
+            "$ref": "#/components/schemas/metadata.Repo"
+          },
+          "step": {
+            "$ref": "#/components/schemas/metadata.Step"
+          },
+          "sys": {
+            "$ref": "#/components/schemas/metadata.System"
+          },
+          "workflow": {
+            "$ref": "#/components/schemas/metadata.Workflow"
+          }
+        }
+      },
+      "metadata.Pipeline": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "commit": {
+            "$ref": "#/components/schemas/metadata.Commit"
+          },
+          "created": {
+            "type": "integer"
+          },
+          "cron": {
+            "type": "string"
+          },
+          "event": {
+            "$ref": "#/components/schemas/metadata.Event"
+          },
+          "event_reason": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "finished": {
+            "type": "integer"
+          },
+          "forge_url": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          },
+          "parent": {
+            "type": "integer"
+          },
+          "rerun_count": {
+            "type": "integer"
+          },
+          "started": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "task": {
+            "type": "string"
+          }
+        }
+      },
+      "metadata.Repo": {
+        "type": "object",
+        "properties": {
+          "clone_url": {
+            "type": "string"
+          },
+          "clone_url_ssh": {
+            "type": "string"
+          },
+          "default_branch": {
+            "type": "string"
+          },
+          "forge_url": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "org_id": {
+            "type": "integer"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "private": {
+            "type": "boolean"
+          },
+          "remote_id": {
+            "type": "string"
+          },
+          "trusted": {
+            "$ref": "#/components/schemas/metadata.TrustedConfiguration"
+          }
+        }
+      },
+      "metadata.Step": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          }
+        }
+      },
+      "metadata.System": {
+        "type": "object",
+        "properties": {
+          "arch": {
+            "type": "string"
+          },
+          "host": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "metadata.TrustedConfiguration": {
+        "type": "object",
+        "properties": {
+          "security": {
+            "type": "boolean"
+          },
+          "volumes": {
+            "type": "boolean"
+          }
+        }
+      },
+      "metadata.Workflow": {
+        "type": "object",
+        "properties": {
+          "matrix": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          }
+        }
+      },
+      "model.ApprovalMode": {
+        "type": "string",
+        "enum": ["none", "forks", "pull_requests", "all_events"],
+        "x-enum-comments": {
+          "RequireApprovalAllEvents": "require approval for all external events",
+          "RequireApprovalForks": "require approval for PRs from forks (default)",
+          "RequireApprovalNone": "require approval for no events",
+          "RequireApprovalPullRequests": "require approval for all pull requests"
+        },
+        "x-enum-descriptions": [
+          "require approval for no events",
+          "require approval for PRs from forks (default)",
+          "require approval for all pull requests",
+          "require approval for all external events"
+        ],
+        "x-enum-varnames": [
+          "RequireApprovalNone",
+          "RequireApprovalForks",
+          "RequireApprovalPullRequests",
+          "RequireApprovalAllEvents"
+        ]
+      },
+      "model.ForgeType": {
+        "type": "string",
+        "enum": [
+          "github",
+          "gitlab",
+          "gitea",
+          "forgejo",
+          "bitbucket",
+          "bitbucket-dc",
+          "addon"
+        ],
+        "x-enum-varnames": [
+          "ForgeTypeGithub",
+          "ForgeTypeGitlab",
+          "ForgeTypeGitea",
+          "ForgeTypeForgejo",
+          "ForgeTypeBitbucket",
+          "ForgeTypeBitbucketDatacenter",
+          "ForgeTypeAddon"
+        ]
+      },
+      "model.QueueTask": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "integer"
+          },
+          "agent_name": {
+            "type": "string"
+          },
+          "dep_status": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/StatusValue"
+            }
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "pid": {
+            "type": "integer"
+          },
+          "pipeline_id": {
+            "type": "integer"
+          },
+          "pipeline_number": {
+            "type": "integer"
+          },
+          "repo_id": {
+            "type": "integer"
+          },
+          "run_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "model.TrustedConfiguration": {
+        "type": "object",
+        "properties": {
+          "security": {
+            "type": "boolean"
+          },
+          "volumes": {
+            "type": "boolean"
+          }
+        }
+      },
+      "model.TrustedConfigurationPatch": {
+        "type": "object",
+        "properties": {
+          "network": {
+            "type": "boolean"
+          },
+          "security": {
+            "type": "boolean"
+          },
+          "volumes": {
+            "type": "boolean"
+          }
+        }
+      },
+      "model.Workflow": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "integer"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Step"
+            }
+          },
+          "environ": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "error": {
+            "type": "string"
+          },
+          "finished": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pid": {
+            "type": "integer"
+          },
+          "pipeline_id": {
+            "type": "integer"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "started": {
+            "type": "integer"
+          },
+          "state": {
+            "$ref": "#/components/schemas/StatusValue"
+          }
+        }
+      }
+    }
+  },
+  "x-original-swagger-version": "2.0"
+}

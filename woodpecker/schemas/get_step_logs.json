@@ -1,0 +1,21 @@
+{
+	"type": "object",
+	"properties": {
+		"repo_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Woodpecker repository id."
+		},
+		"pipeline_number": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Pipeline number."
+		},
+		"step_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Step id (from get_pipeline's workflows[].children[].id)."
+		}
+	},
+	"required": ["repo_id", "pipeline_number", "step_id"]
+}

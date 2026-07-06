@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "matches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {"type": "string", "description": "Absolute path of the matching entry."},
+          "size_bytes": {"type": "integer", "description": "Size in bytes."}
+        },
+        "required": ["path", "size_bytes"],
+        "additionalProperties": false
+      },
+      "description": "Files and directories matching the pattern."
+    }
+  },
+  "required": ["matches"],
+  "additionalProperties": false
+}

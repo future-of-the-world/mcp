@@ -1,0 +1,20 @@
+{
+	"type": "object",
+	"properties": {
+		"logs": {
+			"type": "array",
+			"description": "Log entries for the step, in order. text is a UTF-8 string (decoded from the API's raw byte arrays); kind identifies the entry type.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"line": {"type": "integer", "description": "1-based line number within the step."},
+					"time": {"type": "integer", "description": "Unix seconds."},
+					"kind": {"type": "string", "description": "One of: stdout, stderr, exit_code, metadata, progress, unknown."},
+					"text": {"type": "string", "description": "Decoded log line. May be empty for metadata-only entries."}
+				},
+				"required": ["kind", "text"]
+			}
+		}
+	},
+	"required": ["logs"]
+}

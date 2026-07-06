@@ -1,0 +1,22 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {
+			"type": "string",
+			"description": "Echoes the activity_id argument."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Server-assigned run identifier for this execution."
+		},
+		"result": {
+			"description": "JSON-decoded return value of the activity. The shape depends on the activity's Go return type — the Temporal data converter JSON-decodes the payload, so any JSON-compatible value is forwarded unchanged."
+		},
+		"status": {
+			"type": "string",
+			"enum": ["completed"],
+			"description": "Always 'completed' on success — the activity ran to completion and the result was decoded."
+		}
+	},
+	"required": ["activity_id", "status"]
+}

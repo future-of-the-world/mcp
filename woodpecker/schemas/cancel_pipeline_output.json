@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "canceled": {
+      "type": "boolean",
+      "description": "True if the Woodpecker server returned 200 for the cancel request. The server treats canceling an already-finished or already-canceled pipeline as a no-op success."
+    },
+    "repo_id": {
+      "type": "integer",
+      "description": "Echoes the repo_id argument."
+    },
+    "pipeline_number": {
+      "type": "integer",
+      "description": "Echoes the pipeline_number argument."
+    }
+  },
+  "required": ["canceled", "repo_id", "pipeline_number"]
+}

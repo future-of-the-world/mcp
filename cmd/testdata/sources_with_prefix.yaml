@@ -1,0 +1,14 @@
+name: prefix-example
+version: "1.0.0"
+sources:
+  github:
+    type: proxy
+    connect:
+      command: github-mcp-server
+    tools:
+      prefix: gh # short prefix is prepended verbatim to every github tool
+  gitlab:
+    type: proxy
+    connect:
+      command: gitlab-mcp-server
+    # no tools.prefix override — the tool keeps its base name (no source-name default)

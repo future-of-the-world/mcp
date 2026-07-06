@@ -1,0 +1,113 @@
+{
+	"type": "object",
+	"properties": {
+		"schedule_id": {
+			"type": "string",
+			"description": "Echoes the schedule_id argument."
+		},
+		"description": {
+			"type": "object",
+			"description": "The full ScheduleDescription returned by the Temporal SDK. Fields mirror client.ScheduleDescription — Schedule (action + spec + policy + state) plus Info (action counts, recent and next fire times, timestamps).",
+			"properties": {
+				"Schedule": {
+					"type": "object",
+					"description": "Modifiable fields of the schedule (mirrors client.Schedule).",
+					"properties": {
+						"Action": {
+							"type": "object",
+							"description": "ScheduleWorkflowAction the schedule takes on every fire.",
+							"properties": {
+								"Workflow": {
+									"type": "string",
+									"description": "Workflow type name (as a string)."
+								},
+								"TaskQueue": {
+									"type": "string",
+									"description": "Task queue the workflow runs on."
+								},
+								"Args": {
+									"type": "array",
+									"description": "JSON values forwarded to the workflow as positional args.",
+									"items": {}
+								},
+								"ID": {
+									"type": "string",
+									"description": "Workflow ID prefix. The SDK appends a timestamp for uniqueness."
+								},
+								"StaticSummary": {
+									"type": "string",
+									"description": "Single-line fixed summary for the UI/CLI."
+								},
+								"StaticDetails": {
+									"type": "string",
+									"description": "Multi-line fixed details for the UI/CLI."
+								}
+							}
+						},
+						"Spec": {
+							"type": "object",
+							"description": "ScheduleSpec (mirrors client.ScheduleSpec).",
+							"properties": {
+								"Calendars": {
+									"type": "array",
+									"items": {"type": "object"}
+								},
+								"Intervals": {
+									"type": "array",
+									"items": {"type": "object"}
+								},
+								"CronExpressions": {
+									"type": "array",
+									"description": "Cron expressions the schedule was created with (only present when the schedule used CronExpressions).",
+									"items": {"type": "string"}
+								},
+								"Skip": {
+									"type": "array",
+									"items": {"type": "object"}
+								},
+								"StartAt": {"type": "string", "format": "date-time"},
+								"EndAt": {"type": "string", "format": "date-time"},
+								"Jitter": {"type": "string"},
+								"TimeZoneName": {"type": "string"}
+							}
+						},
+						"State": {
+							"type": "object",
+							"description": "ScheduleState (paused flag, note, remaining actions).",
+							"properties": {
+								"Note": {"type": "string"},
+								"Paused": {"type": "boolean"},
+								"LimitedActions": {"type": "boolean"},
+								"RemainingActions": {"type": "integer"}
+							}
+						}
+					}
+				},
+				"Info": {
+					"type": "object",
+					"description": "ScheduleInfo (run counts, recent actions, next action times, timestamps).",
+					"properties": {
+						"NumActions": {"type": "integer"},
+						"NumActionsMissedCatchupWindow": {"type": "integer"},
+						"NumActionsSkippedOverlap": {"type": "integer"},
+						"RunningWorkflows": {
+							"type": "array",
+							"items": {"type": "object"}
+						},
+						"RecentActions": {
+							"type": "array",
+							"items": {"type": "object"}
+						},
+						"NextActionTimes": {
+							"type": "array",
+							"items": {"type": "string", "format": "date-time"}
+						},
+						"CreatedAt": {"type": "string", "format": "date-time"},
+						"LastUpdateAt": {"type": "string", "format": "date-time"}
+					}
+				}
+			}
+		}
+	},
+	"required": ["schedule_id", "description"]
+}

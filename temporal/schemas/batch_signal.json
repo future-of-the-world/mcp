@@ -1,0 +1,38 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Temporal visibility query. The SQL-like WHERE clause accepted by Temporal's ListWorkflow endpoint, e.g. \"ExecutionStatus = 'Running'\" or \"WorkflowType = 'OrderWorkflow' AND CloseTime is null\"."
+		},
+		"signal_name": {
+			"type": "string",
+			"description": "Name of the workflow signal to deliver to every matched execution. The workflow code must define a handler with this name."
+		},
+		"args": {
+			"description": "Argument to encode into the signal payload. Optional — omit for a signal with no argument. The Temporal Go SDK's default DataConverter (JSON over bytes) is used, so any JSON-encodable value is accepted.",
+			"oneOf": [
+				{"type": "string"},
+				{"type": "number"},
+				{"type": "integer"},
+				{"type": "boolean"},
+				{"type": "null"},
+				{"type": "array"},
+				{"type": "object"}
+			]
+		},
+		"limit": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 100,
+			"description": "Maximum number of workflow executions the visibility query returns (single page). Mirrors the server-side PageSize parameter."
+		},
+		"concurrency": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 50,
+			"description": "Number of concurrent signal requests dispatched to the Temporal frontend. Capped at 100 to protect the frontend from overload."
+		}
+	},
+	"required": ["query", "signal_name"]
+}

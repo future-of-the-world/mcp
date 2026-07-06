@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "workflow_type": {
+      "type": "string",
+      "description": "Workflow type name as registered with the worker."
+    },
+    "status": {
+      "type": "string",
+      "description": "Server-side status string (e.g. \"RUNNING\", \"COMPLETED\", \"FAILED\", \"TERMINATED\")."
+    },
+    "status_code": {
+      "type": "integer",
+      "description": "Raw WorkflowExecutionStatus enum value from the Temporal API."
+    },
+    "start_time": {
+      "type": "string",
+      "description": "RFC3339 timestamp when the run started, or null when not yet started."
+    },
+    "execution_time": {
+      "type": "string",
+      "description": "RFC3339 timestamp when the run last started executing (after continue-as-new)."
+    },
+    "close_time": {
+      "type": "string",
+      "description": "RFC3339 timestamp when the run closed. Null while the run is still open."
+    }
+  },
+  "required": ["workflow_id", "run_id", "workflow_type", "status"]
+}

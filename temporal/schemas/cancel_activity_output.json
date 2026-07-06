@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"status": {
+			"type": "string",
+			"enum": ["canceled"],
+			"description": "Always 'canceled' on success."
+		},
+		"activity_id": {"type": "string", "description": "Echoes the activity_id argument."},
+		"run_id": {"type": "string", "description": "Resolved run ID."},
+		"reason": {"type": "string", "description": "Echoes the reason argument (empty when not provided)."}
+	},
+	"required": ["status", "activity_id"]
+}

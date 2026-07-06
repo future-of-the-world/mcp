@@ -1,0 +1,10 @@
+{
+	"type": "object",
+	"properties": {
+		"schedule_id": {
+			"type": "string",
+			"description": "Identifier of the schedule to permanently delete. This is NOT reversible — running workflows triggered by the schedule are NOT cancelled, but no new ones will fire."
+		}
+	},
+	"required": ["schedule_id"]
+}

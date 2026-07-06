@@ -1,0 +1,13 @@
+version: "2"
+
+linters:
+  default: none
+
+  enable:
+    - goheader
+
+  settings:
+    goheader:
+      template: |-
+        Copyright (c) 2026 amidman. All rights reserved.
+        Use of this source code is governed by the MIT license that can be found in the LICENSE file.

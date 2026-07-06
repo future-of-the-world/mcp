@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "properties": {
+    "content": {
+      "type": "string",
+      "description": "File content as UTF-8 text, or 'b64:<base64>' when the file is not valid UTF-8."
+    },
+    "size_bytes": {
+      "type": "integer",
+      "description": "Size of the file in bytes (matches the on-disk size, not the encoded size). Does not change when a line slice is requested."
+    },
+    "is_binary": {
+      "type": "boolean",
+      "description": "True when the file content was not valid UTF-8 and was base64-encoded in 'content'."
+    },
+    "returned_bytes": {
+      "type": "integer",
+      "description": "Size of the slice actually returned in 'content', in bytes. For text files without line arguments this equals size_bytes; for text files with a line slice it is the byte size of the sliced content. Present for UTF-8 text files only."
+    },
+    "total_lines": {
+      "type": "integer",
+      "description": "Total line count of the file. Present for UTF-8 text files only. When no line arguments are supplied this equals returned_lines."
+    },
+    "returned_lines": {
+      "type": "integer",
+      "description": "Line count of the slice actually returned in 'content'. Present for UTF-8 text files only. When no line arguments are supplied this equals total_lines."
+    }
+  },
+  "required": ["content", "size_bytes", "is_binary"],
+  "additionalProperties": false
+}

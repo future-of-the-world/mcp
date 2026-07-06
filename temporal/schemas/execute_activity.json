@@ -1,0 +1,27 @@
+{
+	"type": "object",
+	"properties": {
+		"activity": {
+			"type": "string",
+			"description": "Activity type name to execute. Must match a registered activity on the target task queue."
+		},
+		"activity_id": {
+			"type": "string",
+			"description": "Business identifier for this standalone activity execution. Must be unique among running activities."
+		},
+		"task_queue": {
+			"type": "string",
+			"description": "Task queue the activity is scheduled on."
+		},
+		"args": {
+			"type": "object",
+			"description": "Arguments to pass to the activity. JSON object — keys/values are forwarded to the activity function via the Temporal data converter. Omit for zero-arg activities."
+		},
+		"start_to_close_timeout_seconds": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Maximum time of a single activity execution attempt in seconds. Defaults to 60s when omitted."
+		}
+	},
+	"required": ["activity", "activity_id", "task_queue"]
+}

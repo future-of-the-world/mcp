@@ -1,0 +1,10 @@
+{
+	"type": "object",
+	"properties": {
+		"schedule_id": {
+			"type": "string",
+			"description": "Identifier of the schedule being described."
+		}
+	},
+	"required": ["schedule_id"]
+}

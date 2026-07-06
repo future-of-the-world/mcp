@@ -1,0 +1,44 @@
+{
+	"type": "object",
+	"properties": {
+		"repo_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Woodpecker repository id (call list_repos first to discover it)."
+		},
+		"page": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 1,
+			"description": "Page offset for pagination. Default 1."
+		},
+		"perPage": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 100,
+			"default": 50,
+			"description": "Max items per page. Default 50, max 100."
+		},
+		"branch": {
+			"type": "string",
+			"description": "Filter pipelines by branch."
+		},
+		"event": {
+			"type": "string",
+			"description": "Filter by webhook event (push, pull_request, tag, manual, cron, deployment, release). Multiple values may be comma-separated."
+		},
+		"status": {
+			"type": "string",
+			"description": "Filter by pipeline status (success, failure, running, pending, killed, canceled, error, skipped, blocked, declined, created)."
+		},
+		"before": {
+			"type": "string",
+			"description": "Only return pipelines created before this RFC3339 timestamp."
+		},
+		"after": {
+			"type": "string",
+			"description": "Only return pipelines created after this RFC3339 timestamp."
+		}
+	},
+	"required": ["repo_id"]
+}

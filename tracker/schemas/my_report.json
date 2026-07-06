@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "assignee":{"type":"string","description":"User login"},"date_from":{"type":"string","format":"date"},"date_to":{"type":"string","format":"date"},"queue":{"type":"string"},"wiki_slug":{"type":"string"}
+  },
+  "required":["assignee"]
+}

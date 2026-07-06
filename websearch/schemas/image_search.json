@@ -1,0 +1,18 @@
+{
+	"type": "object",
+	"properties": {
+		"search_term": {
+			"type": "string",
+			"description": "The search query (required)"
+		},
+		"count": {
+			"type": "integer",
+			"description": "Number of results to return"
+		},
+		"safesearch": {
+			"type": "string",
+			"description": "Safe search setting (strict, moderate, off)"
+		}
+	},
+	"required": ["search_term"]
+}

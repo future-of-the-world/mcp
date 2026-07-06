@@ -1,0 +1,39 @@
+version: "3"
+
+tasks:
+  lint:
+    cmds:
+      - golangci-lint fmt {{.CLI_ARGS}}
+      - golangci-lint run {{.CLI_ARGS}}
+
+  license:
+    cmds:
+      - golangci-lint run --config .linter/.license.golangci.yaml {{.CLI_ARGS}} --fix
+
+  coverage:
+    cmds:
+      - go test {{.CLI_ARGS}} -coverpkg {{.CLI_ARGS}} -coverprofile ./coverage.out -count 1 --race
+      - go tool cover -func=coverage.out -o coverage-func.txt
+      - go tool cover -html ./coverage.out
+
+  merge-linters:
+    cmd: |
+      yq eval-all '
+        select(fileIndex == 0) as $a |
+        select(fileIndex == 1) as $b |
+        select(fileIndex == 2) as $c |
+        ($a *d $b *d $c)
+        | .linters.enable = (($a.linters.enable // []) + ($b.linters.enable // []) + ($c.linters.enable // []) | unique)
+        | .linters.settings.gocritic.enabled-checks = (($b.linters.settings.gocritic.enabled-checks // []) + ($c.linters.settings.gocritic.enabled-checks // []) | unique)
+        | .linters.settings.exhaustruct.exclude = (($b.linters.settings.exhaustruct.exclude // []) + ($c.linters.settings.exhaustruct.exclude // []) | unique)
+        | .linters.exclusions.rules = (($b.linters.exclusions.rules // []) + ($c.linters.exclusions.rules // []) | unique)
+      ' .linter/.license.golangci.yaml .linter/.linters.golangci.yaml .linter/.custom.golangci.yaml > .golangci.yaml
+
+  assert:
+    cmds:
+      - task license
+      - task lint
+      - task coverage -- ./...
+
+  install:
+    cmd: go build -o $GOBIN/mcp go.amidman.dev/mcp/cmd

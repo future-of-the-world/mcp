@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"triggered": {
+			"type": "boolean",
+			"description": "True when the Temporal server accepted the trigger. False is never returned today — failures surface as errors."
+		},
+		"schedule_id": {
+			"type": "string",
+			"description": "Echoes the schedule_id argument."
+		}
+	},
+	"required": ["triggered", "schedule_id"]
+}

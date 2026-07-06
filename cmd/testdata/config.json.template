@@ -1,0 +1,15 @@
+{
+  "name": "test-server",
+  "title": "Test MCP Server",
+  "version": "2.0.0",
+  "sources": {
+    "weather": {
+      "type": "http",
+      "connect": {
+        "url": "{{SERVER_URL}}/weather",
+        "method": "GET",
+        "description": "Get weather data"
+      }
+    }
+  }
+}

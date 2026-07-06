@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Absolute path of the written file."
+    },
+    "bytes_written": {
+      "type": "integer",
+      "description": "Number of bytes written to disk (after decoding, in the case of base64 input)."
+    }
+  },
+  "required": ["path", "bytes_written"],
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string",
+      "description": "Workflow execution id whose result should be fetched."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Optional run id. Omit to target the latest run of the given workflow_id."
+    }
+  },
+  "required": ["workflow_id"]
+}

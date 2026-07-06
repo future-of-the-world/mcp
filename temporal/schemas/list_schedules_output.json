@@ -1,0 +1,40 @@
+{
+	"type": "object",
+	"properties": {
+		"schedules": {
+			"type": "array",
+			"description": "Schedules visible in the namespace, drained from the iterator. Use describe_schedule for the full record of one entry.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Business identifier of the schedule. Pass to pause_schedule / unpause_schedule / trigger_schedule / delete_schedule / describe_schedule."
+					},
+					"paused": {
+						"type": "boolean",
+						"description": "True when the schedule is currently paused. Paused schedules do not fire on their cron ticks."
+					},
+					"note": {
+						"type": "string",
+						"description": "Free-form note attached to the schedule (set by create / pause / unpause). Empty when unset."
+					},
+					"workflow_type": {
+						"type": "string",
+						"description": "Name of the workflow type the schedule fires. Empty when the schedule's action is not a workflow."
+					},
+					"next_fire_times": {
+						"type": "array",
+						"description": "Up to 5 next scheduled fire times (RFC 3339 timestamps). The SDK does not paginate this list — when the iterator is exhausted, these are the only times available.",
+						"items": {
+							"type": "string",
+							"format": "date-time"
+						}
+					}
+				},
+				"required": ["id", "paused"]
+			}
+		}
+	},
+	"required": ["schedules"]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {"type": "string", "description": "Node name (basename for files and directories)."},
+    "type": {"type": "string", "enum": ["file", "directory"]},
+    "children": {
+      "type": "array",
+      "items": {"type": "object"},
+      "description": "Recursive children. Each item has the same {name, type, children} shape. An empty array means this node is a file or a directory at max_depth."
+    }
+  },
+  "required": ["name", "type", "children"],
+  "additionalProperties": false
+}

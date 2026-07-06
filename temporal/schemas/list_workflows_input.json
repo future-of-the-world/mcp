@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "Temporal Visibility query (e.g. \"WorkflowType=\\\"GreetingWorkflow\\\" AND ExecutionStatus=\\\"Failed\\\"\"). Empty lists all."
+    },
+    "page_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000,
+      "default": 100,
+      "description": "Max executions per page. Defaults to 100, capped at 1000 by the Temporal server."
+    },
+    "next_page_token": {
+      "type": "string",
+      "description": "Opaque pagination token returned by a previous list call (base64-encoded). Omit on the first call."
+    }
+  }
+}

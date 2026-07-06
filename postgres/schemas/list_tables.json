@@ -1,0 +1,10 @@
+{
+	"type": "object",
+	"properties": {
+		"schema": {
+			"type": "string",
+			"description": "Schema name to list tables from"
+		}
+	},
+	"required": ["schema"]
+}

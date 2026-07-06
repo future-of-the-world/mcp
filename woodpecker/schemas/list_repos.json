@@ -1,0 +1,13 @@
+{
+	"type": "object",
+	"properties": {
+		"all": {
+			"type": "boolean",
+			"description": "Include inactive repositories in the response. Default is to list only active ones."
+		},
+		"name": {
+			"type": "string",
+			"description": "Filter repositories by name (substring match on the repository name, not full_name)."
+		}
+	}
+}

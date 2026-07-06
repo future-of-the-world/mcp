@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "slug":{"type":"string"},"include_self":{"type":"boolean"},"page_size":{"type":"integer"}
+  },
+  "required":["slug"]
+}

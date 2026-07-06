@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "summary":{"type":"string","description":"Issue summary"},"queue":{"type":"string","description":"Queue key (e.g. TEST)"}
+  },
+  "required":["summary","queue"]
+}

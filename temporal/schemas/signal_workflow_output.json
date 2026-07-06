@@ -1,0 +1,18 @@
+{
+	"type": "object",
+	"properties": {
+		"signaled": {
+			"type": "boolean",
+			"description": "True if the Temporal server accepted the signal. The server delivers the signal asynchronously; this confirms delivery intent, not that the workflow has processed it."
+		},
+		"workflow_id": {
+			"type": "string",
+			"description": "Echoes the workflow_id argument."
+		},
+		"signal_name": {
+			"type": "string",
+			"description": "Echoes the signal_name argument."
+		}
+	},
+	"required": ["signaled", "workflow_id", "signal_name"]
+}

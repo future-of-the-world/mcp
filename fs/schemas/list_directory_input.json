@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Directory path to list. Lists immediate children only; use directory_tree for recursive output."
+    }
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

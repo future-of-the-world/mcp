@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "query":{"type":"string","description":"Tracker query language"},"filter":{"type":"object","description":"Field-value filter pairs"},"queue":{"type":"string"},"keys":{"type":"array","items":{"type":"string"}},"order":{"type":"string"},"fields":{"type":"string"},"per_page":{"type":"integer"},"page":{"type":"integer"}
+  },
+  "required":[]
+}

@@ -1,0 +1,8 @@
+{
+  "tools": {
+    "tracker/test": {
+      "token": "fake-token",
+      "org_id": "fake-org-id"
+    }
+  }
+}

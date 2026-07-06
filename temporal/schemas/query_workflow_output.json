@@ -1,0 +1,17 @@
+{
+	"type": "object",
+	"properties": {
+		"workflow_id": {
+			"type": "string",
+			"description": "Echoes the workflow_id argument."
+		},
+		"query_name": {
+			"type": "string",
+			"description": "Echoes the query_name argument."
+		},
+		"result": {
+			"description": "Decoded query result. The shape is whatever the workflow's query handler returned; the default JSON data converter round-trips primitives, structs, and slices."
+		}
+	},
+	"required": ["workflow_id", "query_name", "result"]
+}

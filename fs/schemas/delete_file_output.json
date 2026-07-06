@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {"type": "string", "description": "Absolute path of the removed entry."}
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

@@ -1,0 +1,55 @@
+{
+	"type": "object",
+	"properties": {
+		"correct": {
+			"type": "boolean",
+			"description": "Whether the text passed validation"
+		},
+		"errors": {
+			"type": "array",
+			"description": "List of grammar and spelling errors found",
+			"items": {
+				"type": "object",
+				"properties": {
+					"index": {
+						"type": "integer",
+						"description": "Position of the error in the text (1-based)"
+					},
+					"mistake": {
+						"type": "string",
+						"description": "The incorrect text that was found"
+					},
+					"category": {
+						"type": "string",
+						"description": "Error category: Grammar, Spelling, Punctuation, Capitalization, or Confused Words"
+					},
+					"hint": {
+						"type": "string",
+						"description": "Structural hint about what kind of change is needed, without revealing the answer"
+					},
+					"rule": {
+						"type": "string",
+						"description": "Short name of the grammar rule violated"
+					},
+					"explanation": {
+						"type": "string",
+						"description": "Explanation of the rule tailored for Russian-speaking English learners"
+					},
+					"context": {
+						"type": "string",
+						"description": "Surrounding context where the error was found"
+					}
+				}
+			}
+		},
+		"cleaned_text": {
+			"type": "string",
+			"description": "The cleaned version of the input text"
+		},
+		"warning": {
+			"type": "string",
+			"description": "Warning message if the API was unreachable"
+		}
+	},
+	"required": ["correct"]
+}

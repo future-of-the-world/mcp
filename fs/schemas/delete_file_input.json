@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Path to remove. Refuses to delete non-empty directories — recursively walk the tree first."
+    }
+  },
+  "required": ["path"],
+  "additionalProperties": false
+}

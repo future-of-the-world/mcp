@@ -1,0 +1,53 @@
+{
+	"type": "object",
+	"properties": {
+		"pipeline": {
+			"type": "object",
+			"description": "Full pipeline including its workflows and child steps. To diagnose a failure, find a child step with state == \"failure\" (or exit_code != 0) and pass its id to get_step_logs.",
+			"properties": {
+				"number": {"type": "integer"},
+				"event": {"type": "string"},
+				"status": {"type": "string", "description": "success, failure, running, pending, killed, canceled, error, skipped, blocked, declined, created"},
+				"branch": {"type": "string"},
+				"commit": {"type": "string"},
+				"message": {"type": "string"},
+				"author": {"type": "string"},
+				"started": {"type": "integer", "description": "Unix seconds"},
+				"finished": {"type": "integer", "description": "Unix seconds"},
+				"duration": {"type": "integer", "description": "Duration in seconds (finished - started)"},
+				"created": {"type": "integer", "description": "Unix seconds"},
+				"workflows": {
+					"type": "array",
+					"description": "Workflows declared in .woodpecker.yaml, each containing the steps that ran.",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {"type": "integer"},
+							"name": {"type": "string"},
+							"state": {"type": "string"},
+							"children": {
+								"type": "array",
+								"description": "Steps in this workflow. Each child's `id` is the step_id argument to get_step_logs.",
+								"items": {
+									"type": "object",
+									"properties": {
+										"id": {"type": "integer", "description": "Step id — pass to get_step_logs."},
+										"name": {"type": "string"},
+										"type": {"type": "string", "description": "clone, service, plugin, commands, or cache"},
+										"state": {"type": "string"},
+										"exit_code": {"type": "integer"},
+										"error": {"type": "string"}
+									},
+									"required": ["id", "name", "state"]
+								}
+							}
+						},
+						"required": ["id", "name", "state"]
+					}
+				}
+			},
+			"required": ["number", "status"]
+		}
+	},
+	"required": ["pipeline"]
+}

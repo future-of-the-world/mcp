@@ -1,0 +1,19 @@
+{
+	"type": "object",
+	"properties": {
+		"schemas": {
+			"type": "array",
+			"description": "List of database schemas",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"description": "Schema name"
+					}
+				}
+			}
+		}
+	},
+	"required": ["schemas"]
+}

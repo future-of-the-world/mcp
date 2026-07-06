@@ -1,0 +1,20 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {"type": "string", "description": "Echoes the query argument."},
+		"count": {"type": "integer", "description": "Total number of activities matching the query."},
+		"groups": {
+			"type": "array",
+			"description": "Aggregation buckets returned by the server (empty unless the server groups the count by a field).",
+			"items": {
+				"type": "object",
+				"properties": {
+					"group_values": {"type": "array", "items": {}, "description": "Group-by key values, one per grouping field."},
+					"count": {"type": "integer"}
+				},
+				"required": ["count"]
+			}
+		}
+	},
+	"required": ["count"]
+}

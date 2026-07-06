@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "terminated": {
+      "type": "boolean",
+      "description": "True if the terminate request reached the server. Terminating an already-finished workflow is a no-op success."
+    },
+    "workflow_id": {
+      "type": "string",
+      "description": "Echoes the workflow_id argument."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Echoes the run_id argument (empty string if not supplied)."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Echoes the reason argument (falls back to the default if none was supplied)."
+    }
+  },
+  "required": ["terminated", "workflow_id", "run_id", "reason"]
+}

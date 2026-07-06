@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "key_or_id":{"type":"string"},"comment_id":{"type":"string","description":"Comment ID"},"text":{"type":"string","description":"New comment text"}
+  },
+  "required":["key_or_id","comment_id","text"]
+}

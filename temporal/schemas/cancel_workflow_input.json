@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string",
+      "description": "Workflow execution id to cancel."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Optional run id. Omit to cancel the latest run of the given workflow_id."
+    }
+  },
+  "required": ["workflow_id"]
+}

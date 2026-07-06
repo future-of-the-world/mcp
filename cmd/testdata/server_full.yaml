@@ -1,0 +1,11 @@
+name: test-server
+title: "Test MCP Server"
+version: "2.0.0"
+
+sources:
+  weather:
+    type: http
+    connect:
+      url: "https://weather.example.com/api"
+      method: "GET"
+      description: "Get weather data"

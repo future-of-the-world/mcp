@@ -1,0 +1,25 @@
+{
+	"type": "object",
+	"properties": {
+		"workflow_id": {
+			"type": "string",
+			"minLength": 1,
+			"description": "Required. The Temporal workflow_id to query."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Optional. Specific run_id of the workflow execution. When omitted, the server targets the latest run."
+		},
+		"query_name": {
+			"type": "string",
+			"minLength": 1,
+			"description": "Required. The name of the query handler registered via workflow.SetQueryHandler in the target workflow."
+		},
+		"args": {
+			"type": "array",
+			"description": "Optional positional args passed to the query handler. Omit (or send an empty array) when the handler takes no arguments.",
+			"items": {}
+		}
+	},
+	"required": ["workflow_id", "query_name"]
+}

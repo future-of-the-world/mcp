@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Path of the file to copy. The source must be a regular file (not a directory)."
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination path. Must also live inside the configured allowed_paths."
+    }
+  },
+  "required": ["source", "destination"],
+  "additionalProperties": false
+}

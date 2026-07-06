@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string",
+      "description": "Workflow execution id whose history should be fetched."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Optional run id. Omit to target the latest run of the given workflow_id."
+    },
+    "max_events": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000,
+      "default": 1000,
+      "description": "Max history events to return. Defaults to 1000."
+    }
+  },
+  "required": ["workflow_id"]
+}

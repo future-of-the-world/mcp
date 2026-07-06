@@ -1,0 +1,17 @@
+{
+  "sources": {
+    "shell": {
+      "type": "shell",
+      "connect": {
+        "working_dir": "/tmp",
+        "timeout": "30s",
+        "max_output_bytes": 1048576,
+        "env": {
+          "LANG": "C.UTF-8",
+          "PATH": "/usr/local/bin:/usr/bin:/bin",
+          "HOME": "/tmp"
+        }
+      }
+    }
+  }
+}

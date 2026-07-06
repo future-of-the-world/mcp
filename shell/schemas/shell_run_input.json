@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "properties": {
+    "command": {
+      "type": "string",
+      "description": "Shell command string. Passed to /bin/sh -c, so all shell features (pipes, redirects, globs, command substitution) work."
+    },
+    "directory": {
+      "type": "string",
+      "description": "Absolute path of a directory inside connect.working_dir to chdir to before running the command. Must exist and be a directory. Required on every call — an empty or omitted value is rejected with a tool error. Rejected with a tool error if outside working_dir, non-absolute, nonexistent, or reached through a symlink that points outside working_dir."
+    },
+    "timeout": {
+      "type": "string",
+      "description": "Override the per-call timeout (e.g. '5m', '30s'). Defaults to connect.timeout when omitted."
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Per-call environment variable overrides. Merged on top of connect.env; per-call values win on key collision."
+    }
+  },
+  "required": ["command", "directory"],
+  "additionalProperties": false
+}

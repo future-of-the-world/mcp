@@ -1,0 +1,40 @@
+{
+	"type": "object",
+	"properties": {
+		"repos": {
+			"type": "array",
+			"description": "Repositories the Woodpecker token can see.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {"type": "integer", "description": "Woodpecker repository id — pass this to the pipeline tools."},
+					"owner": {"type": "string"},
+					"name": {"type": "string"},
+					"full_name": {"type": "string", "description": "owner/name"},
+					"branch": {"type": "string", "description": "Default branch configured on the repository."},
+					"active": {"type": "boolean"},
+					"private": {"type": "boolean"},
+					"last_pipeline": {
+						"type": "object",
+						"description": "Most recent pipeline for this repository (omitted when none exists).",
+						"properties": {
+							"number": {"type": "integer"},
+							"event": {"type": "string", "description": "push, pull_request, tag, manual, cron, …"},
+							"status": {"type": "string", "description": "success, failure, running, pending, killed, canceled, error, skipped, blocked, declined, created"},
+							"branch": {"type": "string"},
+							"commit": {"type": "string"},
+							"author": {"type": "string"},
+							"started": {"type": "integer", "description": "Unix seconds"},
+							"finished": {"type": "integer", "description": "Unix seconds"},
+							"duration": {"type": "integer", "description": "Duration in seconds (finished - started)."},
+							"created": {"type": "integer", "description": "Unix seconds"}
+						},
+						"required": ["number", "status"]
+					}
+				},
+				"required": ["id", "owner", "name", "full_name", "active", "private"]
+			}
+		}
+	},
+	"required": ["repos"]
+}

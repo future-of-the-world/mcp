@@ -1,0 +1,26 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Temporal visibility query against the standalone-activity visibility, e.g. \"ActivityType = 'MyActivity' AND Status = 'Running'\"."
+		},
+		"reason": {
+			"type": "string",
+			"description": "Reason attached to the activity termination event."
+		},
+		"limit": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 100,
+			"description": "Maximum number of activity executions the visibility query returns."
+		},
+		"concurrency": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 50,
+			"description": "Number of concurrent terminate requests. Capped at 100."
+		}
+	},
+	"required": ["query", "reason"]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "allowed_paths": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Absolute paths the LLM is permitted to read, write, or delete. Configured via connect.allowed_paths."
+    }
+  },
+  "required": ["allowed_paths"],
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"schedule_id": {
+			"type": "string",
+			"description": "Identifier of the schedule to unpause. The schedule resumes firing on its next cron tick."
+		},
+		"note": {
+			"type": "string",
+			"description": "Optional human-readable note attached to the unpause (overwrites any existing note on the schedule)."
+		}
+	},
+	"required": ["schedule_id"]
+}

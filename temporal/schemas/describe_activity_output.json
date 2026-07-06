@@ -1,0 +1,18 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {"type": "string", "description": "Activity ID."},
+		"run_id": {"type": "string", "description": "Run ID."},
+		"activity_type": {"type": "string", "description": "Registered activity type name."},
+		"task_queue": {"type": "string", "description": "Task queue the activity was scheduled on."},
+		"status": {"type": "string", "description": "ActivityExecutionStatus enum name (SCHEDULED, STARTED, COMPLETED, FAILED, TIMED_OUT, CANCELED, ABANDONED)."},
+		"status_code": {"type": "integer", "description": "Numeric ActivityExecutionStatus value."},
+		"attempt": {"type": "integer", "description": "Attempt count for the current execution (1-based)."},
+		"start_time": {"type": "string", "description": "RFC3339 timestamp of when the activity attempt started."},
+		"close_time": {"type": "string", "description": "RFC3339 timestamp of when the activity closed (empty while still running)."},
+		"execution_duration_ms": {"type": "integer", "description": "Execution duration in milliseconds (close_time - start_time)."},
+		"last_failure": {"type": "string", "description": "String form of the last activity failure, if any."},
+		"last_worker_identity": {"type": "string", "description": "Identity of the worker that last picked up the activity."}
+	},
+	"required": ["activity_id", "status"]
+}

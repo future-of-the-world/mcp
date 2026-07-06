@@ -1,0 +1,9 @@
+sources:
+  fs:
+    type: fs
+    connect:
+      allowed_paths:
+        - /tmp/fs-source-test
+      max_read_bytes: 1048576
+      max_write_bytes: 10485760
+      follow_symlinks: false

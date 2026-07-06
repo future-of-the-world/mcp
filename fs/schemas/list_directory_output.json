@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "Entry name (basename only)."},
+          "type": {"type": "string", "enum": ["file", "directory"], "description": "Entry kind."},
+          "size_bytes": {"type": "integer", "description": "Size in bytes; 0 for directories."}
+        },
+        "required": ["name", "type", "size_bytes"],
+        "additionalProperties": false
+      },
+      "description": "Immediate children of the listed directory."
+    }
+  },
+  "required": ["entries"],
+  "additionalProperties": false
+}

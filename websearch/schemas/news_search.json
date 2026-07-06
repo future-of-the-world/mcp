@@ -1,0 +1,22 @@
+{
+	"type": "object",
+	"properties": {
+		"search_term": {
+			"type": "string",
+			"description": "The search query (required)"
+		},
+		"count": {
+			"type": "integer",
+			"description": "Number of results to return"
+		},
+		"freshness": {
+			"type": "string",
+			"description": "Time filter (e.g. day, week, month)"
+		},
+		"country": {
+			"type": "string",
+			"description": "Two-letter country code"
+		}
+	},
+	"required": ["search_term"]
+}

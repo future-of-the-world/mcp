@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "root": {
+      "type": "string",
+      "description": "Directory to search under. Must be inside the configured allowed_paths."
+    },
+    "pattern": {
+      "type": "string",
+      "description": "Glob pattern matched against each path relative to root (filepath.Match semantics: '*' matches any sequence, '?' matches a single character)."
+    },
+    "max_depth": {
+      "type": "integer",
+      "description": "Maximum recursion depth. Default 8."
+    }
+  },
+  "required": ["root", "pattern"],
+  "additionalProperties": false
+}

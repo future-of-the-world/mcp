@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {
+			"type": "string",
+			"description": "Standalone activity execution ID to describe."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Optional run ID to disambiguate retries. Omit to describe the most recent execution."
+		}
+	},
+	"required": ["activity_id"]
+}

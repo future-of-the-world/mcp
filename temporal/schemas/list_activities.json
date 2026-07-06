@@ -1,0 +1,19 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Visibility filter in Temporal query syntax (e.g. 'TaskQueue = \"my-queue\" AND ExecutionStatus = \"Running\"'). Omit for all standalone activities in the namespace."
+		},
+		"page_size": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 1000,
+			"description": "Maximum number of activity summaries to return. Defaults to 100."
+		},
+		"next_page_token": {
+			"type": "string",
+			"description": "Opaque continuation token returned by a previous list_activities call's next_page_token. Omit to start from the beginning."
+		}
+	}
+}

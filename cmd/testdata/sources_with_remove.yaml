@@ -1,0 +1,10 @@
+name: remove-example
+version: "1.0.0"
+sources:
+  forgejo:
+    type: proxy
+    connect:
+      command: forgejo-mcp-server
+    tools:
+      remove:
+        - "branch_protection"  # drops branch protection tools (matched after prefixing)

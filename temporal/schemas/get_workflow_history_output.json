@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "events": {
+      "type": "array",
+      "description": "History events for the given workflow run, ordered by event_id. Capped at max_events.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "event_id": {"type": "integer"},
+          "event_type": {"type": "string"},
+          "event_time": {"type": "string"}
+        },
+        "required": ["event_id", "event_type", "event_time"]
+      }
+    },
+    "truncated": {
+      "type": "boolean",
+      "description": "True if the iterator still had more events when max_events was reached."
+    }
+  },
+  "required": ["workflow_id", "run_id", "events"]
+}

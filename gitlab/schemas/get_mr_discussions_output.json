@@ -1,0 +1,12 @@
+{
+	"type": "object",
+	"properties": {
+		"discussions": {
+			"type": "array",
+			"description": "List of GitLab discussion threads (comments, review threads, and system notes) for the merge request",
+			"items": {
+				"type": "object"
+			}
+		}
+	}
+}

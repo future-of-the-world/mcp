@@ -1,0 +1,72 @@
+linters:
+  settings:
+    exhaustruct:
+      exclude:
+        # custom for mcp support
+        - '.+/mcp\.(Tool|CallToolResult|CallToolParams|Implementation|TextContent|SSEClientTransport|StreamableClientTransport)$'
+        - '.+/proxy\.Tool$'
+        - '.+/websearch\.Tool$'
+        # shell.BeforeCommand and shell.RestartPolicy are config
+        # structs whose optional pointer fields (Healthcheck, Restart)
+        # are commonly left nil in tests. Forcing every literal to
+        # spell out each omitempty pointer would add noise without
+        # catching real bugs in production.
+        - '.+/shell\.(BeforeCommand|RestartPolicy|Healthcheck)$'
+
+    gocritic:
+      enabled-checks:
+        - ruleguard
+
+      settings:
+        ruleguard:
+          rules: ruleguard/*.go
+
+  exclusions:
+    rules:
+      - path: ruleguard
+        linters:
+          - unused
+          - lll
+          - revive
+          - varnamelen
+
+      # Defensive: scripts/fix-untyped-nil/* is a developer tool that
+      # drives the linter itself and walks go/ast + go/types. Linting
+      # it is more noise than signal — the linter driver can't lint
+      # itself cleanly without also disabling the rules that make
+      # go/types internals (typed-nil, max, function-result-limit=2)
+      # consistent with the rest of the project.
+      - path: ^scripts/fix-untyped-nil/
+        linters:
+          - errcheck
+          - forcetypeassert
+          - funlen
+          - gocognit
+          - gocritic
+          - golines
+          - lll
+          - modernize
+          - noctx
+          - noinlineerr
+          - nolintlint
+          - revive
+          - unparam
+          - varnamelen
+          - wrapcheck
+          - wsl_v5
+
+      # Defensive: the github-mcp-server module is consumed as a Go
+      # module dependency (see mcp/github/github.go). Its code lives
+      # in the module cache and is not analyzed by `go test ./...` or
+      # `--coverpkg ./...` today, but the linter is the one place a
+      # future config change could broaden the analyzed scope. This
+      # rule documents the intent and excludes the module path
+      # regardless of where the linter reaches.
+      - path: github.com/github/github-mcp-server
+        linters:
+          - all
+
+run:
+  timeout: "5m"
+  issues-exit-code: 1
+  tests: true

@@ -1,0 +1,27 @@
+{
+	"type": "object",
+	"properties": {
+		"pipelines": {
+			"type": "array",
+			"description": "Pipeline summaries for the given repository, in reverse-chronological order.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"number": {"type": "integer", "description": "Pipeline number — pass this to get_pipeline / restart_pipeline / cancel_pipeline."},
+					"event": {"type": "string"},
+					"status": {"type": "string"},
+					"branch": {"type": "string"},
+					"commit": {"type": "string", "description": "Short commit SHA."},
+					"message": {"type": "string", "description": "Commit message."},
+					"author": {"type": "string"},
+					"started": {"type": "integer", "description": "Unix seconds."},
+					"finished": {"type": "integer", "description": "Unix seconds."},
+					"duration": {"type": "integer", "description": "Duration in seconds (finished - started)."},
+					"created": {"type": "integer", "description": "Unix seconds."}
+				},
+				"required": ["number", "status"]
+			}
+		}
+	},
+	"required": ["pipelines"]
+}

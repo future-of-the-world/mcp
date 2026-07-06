@@ -1,0 +1,26 @@
+{
+	"type": "object",
+	"properties": {
+		"activities": {
+			"type": "array",
+			"description": "Activity summaries matching the query.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"activity_id": {"type": "string"},
+					"run_id": {"type": "string"},
+					"activity_type": {"type": "string"},
+					"task_queue": {"type": "string"},
+					"status": {"type": "string", "description": "ActivityExecutionStatus enum name."},
+					"status_code": {"type": "integer"},
+					"schedule_time": {"type": "string", "description": "RFC3339 schedule timestamp."},
+					"close_time": {"type": "string", "description": "RFC3339 close timestamp (empty while running)."}
+				},
+				"required": ["activity_id", "status"]
+			}
+		},
+		"count": {"type": "integer", "description": "Number of activities returned in this page."},
+		"next_page_token": {"type": "string", "description": "Pass to the next call to continue. Empty when there are no more results."}
+	},
+	"required": ["activities", "count"]
+}

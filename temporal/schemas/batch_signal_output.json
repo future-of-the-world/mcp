@@ -1,0 +1,48 @@
+{
+	"type": "object",
+	"properties": {
+		"matched": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "Number of workflow executions returned by the visibility query (single page, capped at limit). All matched executions are targeted; the rest of the response reflects how many of those succeeded or failed."
+		},
+		"succeeded": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "Number of signal requests accepted by the Temporal frontend without error."
+		},
+		"failed": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "Number of signal requests that returned a non-nil error (workflow not found, frontend error, signal handler unavailable, etc.)."
+		},
+		"errors": {
+			"type": "array",
+			"description": "Per-workflow failure details, capped at 50 entries. When the list is truncated the response carries truncated=true and dropped=N — see those fields.",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"description": "Workflow ID of the failed signal call."
+					},
+					"error": {
+						"type": "string",
+						"description": "Failure reason string returned by the SDK (often a Temporal serviceerror)."
+					}
+				},
+				"required": ["id", "error"]
+			}
+		},
+		"truncated": {
+			"type": "boolean",
+			"description": "True when failed > len(errors[]). Always paired with dropped on the same response."
+		},
+		"dropped": {
+			"type": "integer",
+			"minimum": 0,
+			"description": "Number of failure entries omitted from errors[] because the 50-entry cap was hit. Sum errors[].len + dropped == failed."
+		}
+	},
+	"required": ["matched", "succeeded", "failed"]
+}

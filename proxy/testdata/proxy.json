@@ -1,0 +1,12 @@
+{
+  "tools": {
+    "proxy/remote": {
+      "url": "http://localhost:8080/mcp",
+      "headers": {
+        "Authorization": "Bearer test-token",
+        "X-Custom": "custom-value"
+      },
+      "transport": "sse"
+    }
+  }
+}

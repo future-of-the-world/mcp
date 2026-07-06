@@ -1,0 +1,31 @@
+{
+	"type": "object",
+	"properties": {
+		"schedule_id": {
+			"type": "string",
+			"description": "Business identifier of the schedule. Must be unique within the Temporal namespace."
+		},
+		"workflow_name": {
+			"type": "string",
+			"description": "Workflow type to run on every fire. The Temporal worker registers this type name at startup."
+		},
+		"task_queue": {
+			"type": "string",
+			"description": "Task queue the workflow and its activities are scheduled on. The worker must be listening on this queue."
+		},
+		"cron": {
+			"type": "string",
+			"description": "5-field standard cron expression (minute, hour, day-of-month, month, day-of-week) plus optional @yearly / @monthly / @weekly / @daily / @hourly shorthands. The server validates the expression."
+		},
+		"args": {
+			"type": "array",
+			"description": "Optional JSON array of positional arguments forwarded to the workflow on every fire. Omit or null for workflows that take no input.",
+			"items": {}
+		},
+		"notes": {
+			"type": "string",
+			"description": "Optional human-readable note attached to the schedule (visible in describe_schedule output and the Temporal UI)."
+		}
+	},
+	"required": ["schedule_id", "workflow_name", "task_queue", "cron"]
+}

@@ -1,0 +1,24 @@
+{
+	"type": "object",
+	"properties": {
+		"repo_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Woodpecker repository id."
+		},
+		"pipeline_number": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Pipeline number to restart."
+		},
+		"event": {
+			"type": "string",
+			"description": "Override the event type (e.g. \"push\", \"manual\"). Defaults to the original pipeline's event on the server."
+		},
+		"deploy_to": {
+			"type": "string",
+			"description": "Override the target deploy value (only meaningful for deploy-style pipelines)."
+		}
+	},
+	"required": ["repo_id", "pipeline_number"]
+}

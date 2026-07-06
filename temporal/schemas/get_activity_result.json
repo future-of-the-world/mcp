@@ -1,0 +1,19 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {
+			"type": "string",
+			"description": "Standalone activity execution ID to fetch the result of."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Optional run ID to disambiguate retries. Omit to fetch the most recent execution for the given activity_id."
+		},
+		"timeout_seconds": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Optional wall-clock timeout in seconds for waiting on the result. When omitted, the call blocks until the activity completes (or fails)."
+		}
+	},
+	"required": ["activity_id"]
+}

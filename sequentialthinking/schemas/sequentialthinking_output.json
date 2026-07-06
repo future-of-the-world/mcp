@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "thoughtNumber": {
+      "type": "integer",
+      "description": "Current thought number"
+    },
+    "totalThoughts": {
+      "type": "integer",
+      "description": "Adjusted total thoughts estimate"
+    },
+    "nextThoughtNeeded": {
+      "type": "boolean",
+      "description": "Whether another thought step is needed"
+    },
+    "branches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Active branch IDs"
+    },
+    "thoughtHistoryLength": {
+      "type": "integer",
+      "description": "Number of thoughts recorded so far"
+    }
+  },
+  "required": ["thoughtNumber", "totalThoughts", "nextThoughtNeeded", "branches", "thoughtHistoryLength"],
+  "additionalProperties": false
+}

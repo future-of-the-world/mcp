@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_name": {
+      "type": "string",
+      "description": "Workflow type name registered with the Temporal worker (e.g. \"GreetingWorkflow\")."
+    },
+    "workflow_id": {
+      "type": "string",
+      "description": "Unique workflow execution id. Pass an explicit id so the agent can correlate later describe/cancel calls."
+    },
+    "task_queue": {
+      "type": "string",
+      "description": "Task queue the workflow should be scheduled on. Must match a queue the worker is polling."
+    },
+    "args": {
+      "type": "array",
+      "description": "Positional workflow arguments passed through to ExecuteWorkflow as variadic args.",
+      "items": {}
+    }
+  },
+  "required": ["workflow_name", "workflow_id", "task_queue"]
+}

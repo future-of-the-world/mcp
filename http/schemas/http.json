@@ -1,0 +1,23 @@
+{
+	"type": "object",
+	"properties": {
+		"body": {
+			"description": "JSON body for POST/PUT/PATCH requests"
+		},
+		"query": {
+			"type": "object",
+			"description": "Query parameters",
+			"additionalProperties": {"type": "string"}
+		},
+		"headers": {
+			"type": "object",
+			"description": "Per-request headers",
+			"additionalProperties": {"type": "string"}
+		},
+		"form": {
+			"type": "object",
+			"description": "Form data (alternative to body)",
+			"additionalProperties": {"type": "string"}
+		}
+	}
+}

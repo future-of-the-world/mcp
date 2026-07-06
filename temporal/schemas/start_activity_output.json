@@ -1,0 +1,19 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {
+			"type": "string",
+			"description": "Echoes the activity_id argument — the standalone activity was scheduled successfully."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Server-assigned run identifier. Use this in subsequent temporal_get_activity_result or temporal_describe_activity calls to disambiguate retries."
+		},
+		"status": {
+			"type": "string",
+			"enum": ["started"],
+			"description": "Always 'started' on success — the activity has been scheduled but is NOT awaited by this tool. Use temporal_get_activity_result to block on completion."
+		}
+	},
+	"required": ["activity_id", "status"]
+}

@@ -1,0 +1,10 @@
+{
+	"type": "object",
+	"properties": {
+		"schedule_id": {
+			"type": "string",
+			"description": "Identifier of the schedule to trigger. Each call starts a new workflow execution; the schedule's overlap policy still applies to the manual trigger."
+		}
+	},
+	"required": ["schedule_id"]
+}

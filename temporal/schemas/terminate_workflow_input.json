@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string",
+      "description": "Workflow execution id to terminate."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Optional run id. Omit to target the latest run of the given workflow_id."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Free-form reason recorded against the WorkflowExecutionTerminated event. Defaults to \"Terminated via MCP\"."
+    },
+    "details": {
+      "type": "array",
+      "description": "Positional details recorded on the termination event.",
+      "items": {}
+    }
+  },
+  "required": ["workflow_id"]
+}

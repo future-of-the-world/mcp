@@ -1,0 +1,10 @@
+name: temporal-example
+version: "1.0.0"
+sources:
+  mytemporal:
+    type: temporal
+    connect:
+      host: localhost:7233
+      namespace: default
+    tools:
+      prefix: t1_ # t1_ prefix is prepended verbatim to every temporal tool

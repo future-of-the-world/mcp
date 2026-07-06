@@ -1,0 +1,51 @@
+{
+	"type": "object",
+	"properties": {
+		"pipeline": {
+			"type": "object",
+			"description": "The newly-launched pipeline, same shape as get_pipeline's output. workflows[] is included but will be empty until the run begins.",
+			"properties": {
+				"number": {"type": "integer"},
+				"event": {"type": "string", "description": "Always \"manual\" for a pipeline launched via this tool."},
+				"status": {"type": "string"},
+				"branch": {"type": "string"},
+				"commit": {"type": "string"},
+				"message": {"type": "string"},
+				"author": {"type": "string"},
+				"started": {"type": "integer"},
+				"finished": {"type": "integer"},
+				"duration": {"type": "integer"},
+				"created": {"type": "integer"},
+				"workflows": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {"type": "integer"},
+							"name": {"type": "string"},
+							"state": {"type": "string"},
+							"children": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"id": {"type": "integer"},
+										"name": {"type": "string"},
+										"type": {"type": "string"},
+										"state": {"type": "string"},
+										"exit_code": {"type": "integer"},
+										"error": {"type": "string"}
+									},
+									"required": ["id", "name", "state"]
+								}
+							}
+						},
+						"required": ["id", "name", "state"]
+					}
+				}
+			},
+			"required": ["number", "status"]
+		}
+	},
+	"required": ["pipeline"]
+}

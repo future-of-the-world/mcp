@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "path": {
+      "type": "string",
+      "description": "Destination path. May be absolute (when it lives inside one of the configured allowed_paths) or relative to one of them. Parent directories are created on demand."
+    },
+    "content": {
+      "type": "string",
+      "description": "Content to write. Plain text when 'encoding' is 'utf-8'; base64-encoded when 'encoding' is 'base64'."
+    },
+    "encoding": {
+      "type": "string",
+      "enum": ["utf-8", "base64"],
+      "description": "How to interpret 'content'. Default 'utf-8'."
+    }
+  },
+  "required": ["path", "content"],
+  "additionalProperties": false
+}

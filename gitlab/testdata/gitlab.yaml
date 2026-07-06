@@ -1,0 +1,3 @@
+tools:
+  gitlab/test:
+    token: fake-token

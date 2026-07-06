@@ -1,0 +1,31 @@
+{
+	"type": "object",
+	"properties": {
+		"tables": {
+			"type": "array",
+			"description": "List of tables in the schema",
+			"items": {
+				"type": "object",
+				"properties": {
+					"schema": {
+						"type": "string",
+						"description": "Schema name"
+					},
+					"name": {
+						"type": "string",
+						"description": "Table name"
+					},
+					"type": {
+						"type": "string",
+						"description": "Table type (BASE TABLE, VIEW, etc.)"
+					},
+					"row_count_estimate": {
+						"type": "integer",
+						"description": "Estimated number of rows"
+					}
+				}
+			}
+		}
+	},
+	"required": ["tables"]
+}

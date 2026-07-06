@@ -1,0 +1,16 @@
+{
+	"type": "object",
+	"properties": {
+		"repo_id": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Woodpecker repository id (call list_repos first to discover it)."
+		},
+		"pipeline_number": {
+			"type": "integer",
+			"minimum": 1,
+			"description": "Pipeline number to fetch (call list_pipelines first to discover it)."
+		}
+	},
+	"required": ["repo_id", "pipeline_number"]
+}

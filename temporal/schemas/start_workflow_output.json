@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "workflow_id": {
+      "type": "string",
+      "description": "Echoes the workflow_id argument."
+    },
+    "run_id": {
+      "type": "string",
+      "description": "Run id assigned by the Temporal server. Pair with workflow_id for follow-up describe/cancel/result calls."
+    },
+    "status": {
+      "type": "string",
+      "description": "Always \"started\" for a successful start. Use describe_workflow to read the server-side status afterwards."
+    }
+  },
+  "required": ["workflow_id", "run_id", "status"]
+}

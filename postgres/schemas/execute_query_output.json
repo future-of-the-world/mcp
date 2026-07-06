@@ -1,0 +1,19 @@
+{
+	"type": "object",
+	"properties": {
+		"columns": {
+			"type": "array",
+			"description": "List of column names in the result set",
+			"items": {"type": "string"}
+		},
+		"rows": {
+			"type": "array",
+			"description": "Query result rows",
+			"items": {
+				"type": "array",
+				"items": {}
+			}
+		}
+	},
+	"required": ["columns", "rows"]
+}

@@ -1,0 +1,38 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Temporal visibility query. The SQL-like WHERE clause accepted by Temporal's ListWorkflow endpoint, e.g. \"ExecutionStatus = 'Running'\"."
+		},
+		"reason": {
+			"type": "string",
+			"description": "Reason string attached to every WorkflowExecutionTerminated event for this batch. Surfaces in the UI/CLI workflow history."
+		},
+		"details": {
+			"description": "Optional details payload forwarded to the SDK's TerminateWorkflow call. Encoded with the default JSON DataConverter.",
+			"oneOf": [
+				{"type": "string"},
+				{"type": "number"},
+				{"type": "integer"},
+				{"type": "boolean"},
+				{"type": "null"},
+				{"type": "array"},
+				{"type": "object"}
+			]
+		},
+		"limit": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 100,
+			"description": "Maximum number of workflow executions the visibility query returns (single page)."
+		},
+		"concurrency": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 50,
+			"description": "Number of concurrent terminate requests. Capped at 100."
+		}
+	},
+	"required": ["query", "reason"]
+}

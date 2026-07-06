@@ -1,0 +1,6 @@
+*.DS_Store
+.worktrees/
+coverage.out
+coverage-func.txt
+fs-coverage.out
+temporal-mcp/

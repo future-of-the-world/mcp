@@ -1,0 +1,25 @@
+{
+	"type": "object",
+	"properties": {
+		"workflow_id": {
+			"type": "string",
+			"minLength": 1,
+			"description": "Required. The Temporal workflow_id to signal."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Optional. Specific run_id of the workflow execution. When omitted, the server targets the latest run."
+		},
+		"signal_name": {
+			"type": "string",
+			"minLength": 1,
+			"description": "Required. The name of the signal handler registered via workflow.SetSignalHandler in the target workflow."
+		},
+		"args": {
+			"type": "array",
+			"description": "Optional positional args delivered to the signal handler. Omit (or send an empty array) when the handler takes no arguments. Signals are NOT idempotent — re-sending the same signal triggers a separate handler invocation each time.",
+			"items": {}
+		}
+	},
+	"required": ["workflow_id", "signal_name"]
+}

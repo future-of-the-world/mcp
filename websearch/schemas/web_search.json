@@ -1,0 +1,52 @@
+{
+	"type": "object",
+	"properties": {
+		"search_term": {
+			"type": "string",
+			"description": "The search query (required)"
+		},
+		"provider": {
+			"type": "string",
+			"description": "Search provider to use (e.g. brave, duckduckgo)"
+		},
+		"count": {
+			"type": "integer",
+			"description": "Number of results to return"
+		},
+		"offset": {
+			"type": "integer",
+			"description": "Result offset for pagination"
+		},
+		"cursor": {
+			"type": "string",
+			"description": "Opaque pagination cursor"
+		},
+		"freshness": {
+			"type": "string",
+			"description": "Time filter (e.g. day, week, month)"
+		},
+		"country": {
+			"type": "string",
+			"description": "Two-letter country code"
+		},
+		"search_lang": {
+			"type": "string",
+			"description": "Search language code"
+		},
+		"safesearch": {
+			"type": "string",
+			"description": "Safe search setting (strict, moderate, off)"
+		},
+		"include_domains": {
+			"type": "array",
+			"items": {"type": "string"},
+			"description": "Domains to include in results"
+		},
+		"exclude_domains": {
+			"type": "array",
+			"items": {"type": "string"},
+			"description": "Domains to exclude from results"
+		}
+	},
+	"required": ["search_term"]
+}

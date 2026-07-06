@@ -1,0 +1,12 @@
+{
+  "tools": {
+    "proxy/remote": {
+      "command": "/usr/bin/echo-server",
+      "args": ["stdio"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_testtoken123",
+        "CUSTOM_VAR": "custom-value"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Temporal visibility query against the standalone-activity visibility, e.g. \"ActivityType = 'MyActivity' AND Status = 'Running'\"."
+		},
+		"reason": {
+			"type": "string",
+			"description": "Reason attached to the activity cancellation event. Useful for the activity worker's cancellation handler and audit history."
+		},
+		"limit": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 100,
+			"description": "Maximum number of activity executions the visibility query returns. Mirrors the server-side PageSize parameter."
+		},
+		"concurrency": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 50,
+			"description": "Number of concurrent cancel requests. Capped at 100."
+		}
+	},
+	"required": ["query"]
+}

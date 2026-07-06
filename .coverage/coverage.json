@@ -1,0 +1,4426 @@
+{
+  "mode": "atomic",
+  "functions": [
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 73,
+      "name": "setDefaults",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 88,
+      "name": "UnmarshalYAML",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 118,
+      "name": "UnmarshalJSON",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 146,
+      "name": "sourcesFromMap",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 166,
+      "name": "NewConfig",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 171,
+      "name": "main",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 200,
+      "name": "run",
+      "percentage": 76.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 294,
+      "name": "runTransport",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 306,
+      "name": "runStdio",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 323,
+      "name": "runSSE",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 339,
+      "name": "runStreamable",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 356,
+      "name": "runHTTPServer",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 429,
+      "name": "loadConfig",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 460,
+      "name": "loghandler",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/cmd/main.go",
+      "line": 485,
+      "name": "loglevel",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/decode/decode.go",
+      "line": 43,
+      "name": "AsString",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english.go",
+      "line": 89,
+      "name": "decodeConnect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english.go",
+      "line": 124,
+      "name": "applyDefaults",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english.go",
+      "line": 134,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english.go",
+      "line": 185,
+      "name": "Connect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english.go",
+      "line": 231,
+      "name": "handleValidateEnglish",
+      "percentage": 94.1
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 63,
+      "name": "newLanguageToolClient",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 86,
+      "name": "stripIgnoredSegments",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 101,
+      "name": "stripCyrillic",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 111,
+      "name": "callLanguageTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 190,
+      "name": "enrichExplanation",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 200,
+      "name": "generateHint",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 224,
+      "name": "filterErrors",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 238,
+      "name": "formatErrors",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_client.go",
+      "line": 290,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/english/english_types.go",
+      "line": 24,
+      "name": "shouldSkipMatch",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/atomic_write.go",
+      "line": 20,
+      "name": "atomicWriteFile",
+      "percentage": 68.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 178,
+      "name": "decodeConnect",
+      "percentage": 95.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 231,
+      "name": "decodeAllowedPaths",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 266,
+      "name": "decodeInt",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 291,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 309,
+      "name": "resolveMaxReadBytes",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 320,
+      "name": "resolveMaxWriteBytes",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 335,
+      "name": "readOnlyAnnotations",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 348,
+      "name": "destructiveWriteAnnotations",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 364,
+      "name": "safeWriteAnnotations",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 378,
+      "name": "newFalse",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 386,
+      "name": "nilBoolPtr",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/fs.go",
+      "line": 398,
+      "name": "Connect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 84,
+      "name": "isRegexMeta",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 93,
+      "name": "extractLiteralPrefix",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 135,
+      "name": "isBinaryFileReader",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 152,
+      "name": "isBinaryFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 164,
+      "name": "stripLineEnding",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 199,
+      "name": "prepareNeedle",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 221,
+      "name": "tryMatchLine",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 247,
+      "name": "classifyLine",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 314,
+      "name": "withOpenSearchFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 361,
+      "name": "newSinglePassState",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 386,
+      "name": "processLine",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 443,
+      "name": "emitBeforeContext",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 479,
+      "name": "emitMatch",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 491,
+      "name": "emitAfterContext",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 517,
+      "name": "pushRing",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 541,
+      "name": "searchFile",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 568,
+      "name": "scanFile",
+      "percentage": 89.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 616,
+      "name": "compileRegexp",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 654,
+      "name": "loadGitignoreForDir",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 691,
+      "name": "matchesGitignore",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 712,
+      "name": "shouldSkipDir",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 716,
+      "name": "shouldSkipFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 724,
+      "name": "shouldIgnoreEntry",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 740,
+      "name": "shouldSkipByInclude",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 755,
+      "name": "walkCandidateFiles",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 780,
+      "name": "entryDepth",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 796,
+      "name": "visitWalkEntry",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 833,
+      "name": "visitDir",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 848,
+      "name": "enqueueCandidate",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 871,
+      "name": "exceedsMaxDepth",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 891,
+      "name": "runWorker",
+      "percentage": 69.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 926,
+      "name": "sendNonBlocking",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 935,
+      "name": "grepCore",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 1030,
+      "name": "newResultAggregator",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 1052,
+      "name": "finalizeGrep",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/grep.go",
+      "line": 1078,
+      "name": "lessHit",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 112,
+      "name": "decodeArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 120,
+      "name": "guardPath",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 146,
+      "name": "buildTree",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 173,
+      "name": "buildTreeNode",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 211,
+      "name": "matchSearchPattern",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 221,
+      "name": "resolveMaxDepth",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 232,
+      "name": "decodeWriteContent",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 256,
+      "name": "handleListAllowedDirectories",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 266,
+      "name": "listAllowedDirectories",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 282,
+      "name": "handleReadFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 295,
+      "name": "readFile",
+      "percentage": 94.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 337,
+      "name": "validateLineRange",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 363,
+      "name": "readFileLocked",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 405,
+      "name": "readFileTextResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 471,
+      "name": "readFileContents",
+      "percentage": 63.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 496,
+      "name": "handleWriteFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 508,
+      "name": "writeFile",
+      "percentage": 85
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 555,
+      "name": "writeFileLocked",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 573,
+      "name": "handleEditFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 587,
+      "name": "editFile",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 624,
+      "name": "editFileLocked",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 645,
+      "name": "applySingleReplacement",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 682,
+      "name": "handleCreateDirectory",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 694,
+      "name": "createDirectory",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 728,
+      "name": "createDirectoryLocked",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 748,
+      "name": "handleListDirectory",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 757,
+      "name": "listDirectory",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 780,
+      "name": "listDirectoryEntries",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 814,
+      "name": "dirEntryFromOsEntry",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 837,
+      "name": "handleDirectoryTree",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 846,
+      "name": "directoryTree",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 888,
+      "name": "handleMoveFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 902,
+      "name": "moveFile",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 941,
+      "name": "moveFileLocked",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 954,
+      "name": "handleCopyFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 969,
+      "name": "copyFile",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1008,
+      "name": "copyFileLocked",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1024,
+      "name": "copyRegularFile",
+      "percentage": 76
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1076,
+      "name": "handleDeleteFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1089,
+      "name": "deleteFile",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1123,
+      "name": "deleteFileLocked",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1140,
+      "name": "deleteDirectoryIfEmpty",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1156,
+      "name": "removePath",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1168,
+      "name": "handleSearchFiles",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1176,
+      "name": "searchFiles",
+      "percentage": 82.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1216,
+      "name": "walkAndMatch",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1249,
+      "name": "visit",
+      "percentage": 76.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1278,
+      "name": "appendIfMatches",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1307,
+      "name": "shouldSkipDir",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1323,
+      "name": "handleGetFileInfo",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1331,
+      "name": "getFileInfo",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1361,
+      "name": "handleGrep",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1370,
+      "name": "grepSearch",
+      "percentage": 88.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1412,
+      "name": "buildGrepOptions",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1429,
+      "name": "resolveMaxResults",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1439,
+      "name": "resolveContextLines",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1449,
+      "name": "resolveMaxLineBytes",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/handlers.go",
+      "line": 1460,
+      "name": "derefBool",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/output.go",
+      "line": 31,
+      "name": "encodeBytes",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/output.go",
+      "line": 43,
+      "name": "isValidUTF8",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/output.go",
+      "line": 52,
+      "name": "textResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 82,
+      "name": "resolveAndGuard",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 126,
+      "name": "preflightPathChecks",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 149,
+      "name": "resolveFollowingSymlinks",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 167,
+      "name": "resolveRejectingSymlinks",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 180,
+      "name": "canonicalRoot",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 208,
+      "name": "nameSpaceNormal",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 242,
+      "name": "canonicalize",
+      "percentage": 18.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 283,
+      "name": "walkRejectingSymlinks",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 310,
+      "name": "advanceRejectingSymlink",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 336,
+      "name": "pathHasPrefix",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 357,
+      "name": "isParentTraversal",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathguard.go",
+      "line": 364,
+      "name": "splitPath",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathlock.go",
+      "line": 23,
+      "name": "pathLockFor",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathlock.go",
+      "line": 44,
+      "name": "withPathLock",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathlock.go",
+      "line": 62,
+      "name": "withPathRLock",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/fs/pathlock.go",
+      "line": 82,
+      "name": "withPathTwoLocks",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 87,
+      "name": "decodeString",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 106,
+      "name": "decodeToolsetsSlice",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 148,
+      "name": "decodeConnect",
+      "percentage": 95.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 191,
+      "name": "decodeReadOnly",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 208,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 224,
+      "name": "Connect",
+      "percentage": 82.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 293,
+      "name": "buildUpstreamServer",
+      "percentage": 78.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 350,
+      "name": "noFeatureFlags",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 368,
+      "name": "buildClients",
+      "percentage": 72
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 432,
+      "name": "buildInventory",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 462,
+      "name": "buildUpstreamMCPServer",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 496,
+      "name": "buildUserAgent",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 511,
+      "name": "bridgeUpstream",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 557,
+      "name": "listRemoteTools",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 575,
+      "name": "makeCallHandler",
+      "percentage": 30
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 608,
+      "name": "RoundTrip",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 627,
+      "name": "RoundTrip",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/github/github.go",
+      "line": 642,
+      "name": "normalizeHost",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 101,
+      "name": "parseMRURL",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 140,
+      "name": "decodeConnect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 177,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 202,
+      "name": "Connect",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 270,
+      "name": "parseAndValidateURL",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 285,
+      "name": "handleGetMRDiscussions",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 311,
+      "name": "handleGetMRCommits",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 345,
+      "name": "makeMRHandler",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 368,
+      "name": "getURLField",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/gitlab/gitlab.go",
+      "line": 382,
+      "name": "jsonResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 82,
+      "name": "decodeConnect",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 161,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 187,
+      "name": "isValidHTTPMethod",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 203,
+      "name": "isReadOnlyHTTPMethod",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 217,
+      "name": "Connect",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 284,
+      "name": "handleRequest",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 337,
+      "name": "prepareRequestBody",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 371,
+      "name": "buildRequest",
+      "percentage": 81.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 407,
+      "name": "buildURLWithQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/http/http.go",
+      "line": 427,
+      "name": "executeRequest",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres.go",
+      "line": 90,
+      "name": "decodeConnect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres.go",
+      "line": 117,
+      "name": "openDB",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres.go",
+      "line": 140,
+      "name": "redactDSN",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres.go",
+      "line": 159,
+      "name": "redactURLUserInfo",
+      "percentage": 93.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres.go",
+      "line": 202,
+      "name": "Connect",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_handlers.go",
+      "line": 17,
+      "name": "handleListSchemas",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_handlers.go",
+      "line": 30,
+      "name": "handleListTables",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_handlers.go",
+      "line": 51,
+      "name": "handleExecuteQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_handlers.go",
+      "line": 72,
+      "name": "handleGetTableInfo",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_handlers.go",
+      "line": 93,
+      "name": "textResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_queries.go",
+      "line": 14,
+      "name": "getSchemas",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_queries.go",
+      "line": 53,
+      "name": "getTables",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_queries.go",
+      "line": 102,
+      "name": "executeQuery",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_queries.go",
+      "line": 148,
+      "name": "parsePostgresArray",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 15,
+      "name": "scanRows",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 45,
+      "name": "sanitizeRow",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 52,
+      "name": "sanitizeValue",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 66,
+      "name": "sanitizeBinary",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 76,
+      "name": "stripOneLeadingComment",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 96,
+      "name": "stripLeadingComments",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 110,
+      "name": "hasReadOnlyPrefix",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 136,
+      "name": "validateCTEIsReadOnly",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_readonly.go",
+      "line": 171,
+      "name": "isReadOnlyQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 16,
+      "name": "getTableInfo",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 34,
+      "name": "fetchTableInfoRecursive",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 79,
+      "name": "fetchDetailedTableInfo",
+      "percentage": 76.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 137,
+      "name": "fetchTableBasicInfo",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 180,
+      "name": "fetchDetailedColumns",
+      "percentage": 86.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 269,
+      "name": "fetchTableIndexes",
+      "percentage": 82.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 341,
+      "name": "fetchTableConstraints",
+      "percentage": 87
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 442,
+      "name": "fetchTableReferences",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 455,
+      "name": "fetchTableReferencedBy",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 468,
+      "name": "buildTableReferencesBaseQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/postgres/postgres_tableinfo.go",
+      "line": 500,
+      "name": "executeTableReferencesQuery",
+      "percentage": 50
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 80,
+      "name": "decodeConnect",
+      "percentage": 92
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 153,
+      "name": "decodeStringMap",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 181,
+      "name": "decodeStringSlice",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 203,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 217,
+      "name": "Connect",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 246,
+      "name": "discover",
+      "percentage": 18.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 297,
+      "name": "connect",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 324,
+      "name": "wrapConnectError",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 350,
+      "name": "newTransport",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 401,
+      "name": "listRemoteTools",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 418,
+      "name": "makeCallHandler",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/proxy/proxy.go",
+      "line": 453,
+      "name": "RoundTrip",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/ruleguard/banUntypedNilInCompositeLit.go",
+      "line": 12,
+      "name": "banUntypedNilInCompositeLit",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/ruleguard/banUntypedNilInFuncCall.go",
+      "line": 11,
+      "name": "banUntypedNilInFuncCall",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 59,
+      "name": "ParseLinterOutput",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 91,
+      "name": "PkgRelFromFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 101,
+      "name": "GroupIssuesByPackage",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 123,
+      "name": "BuildCallLookup",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 213,
+      "name": "LookupCall",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 244,
+      "name": "DumpKeys",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 265,
+      "name": "NilIdentPos",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 276,
+      "name": "ParamTypeAt",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 300,
+      "name": "CallType",
+      "percentage": 50
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 329,
+      "name": "TypedNilString",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 370,
+      "name": "chanDirLabel",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 382,
+      "name": "typeQualifier",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 395,
+      "name": "ApplyEdit",
+      "percentage": 76.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 422,
+      "name": "GroupByFile",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 434,
+      "name": "SortedKeys",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 447,
+      "name": "DescendingPos",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go",
+      "line": 460,
+      "name": "ParseFileForTest",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 54,
+      "name": "main",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 74,
+      "name": "runApp",
+      "percentage": 58.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 147,
+      "name": "registerFlags",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 166,
+      "name": "parseFlags",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 177,
+      "name": "collectIssues",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 200,
+      "name": "resolveAll",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 219,
+      "name": "loadPackages",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 243,
+      "name": "resolvePackageEdits",
+      "percentage": 67.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 333,
+      "name": "resolveParamType",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 350,
+      "name": "recordSkip",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 358,
+      "name": "printDryRun",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 371,
+      "name": "writeEdits",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 385,
+      "name": "rewriteFile",
+      "percentage": 93.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 415,
+      "name": "runFormatters",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 432,
+      "name": "runQuiet",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 442,
+      "name": "logVerbose",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go",
+      "line": 449,
+      "name": "logResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/handler.go",
+      "line": 93,
+      "name": "handleSequentialThinking",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/handler.go",
+      "line": 126,
+      "name": "argsToThoughtData",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/handler.go",
+      "line": 149,
+      "name": "textResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 126,
+      "name": "decodeConnect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 149,
+      "name": "decodeBool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 200,
+      "name": "newSequentialThinkingServer",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 224,
+      "name": "processThought",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 263,
+      "name": "branchKeys",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 282,
+      "name": "sortStrings",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go",
+      "line": 295,
+      "name": "Connect",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 112,
+      "name": "RunBefore",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 202,
+      "name": "resolveRestartPolicy",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 229,
+      "name": "runBeforeOne",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 277,
+      "name": "shouldKeepRestarting",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 289,
+      "name": "shouldRespawnAfter",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 337,
+      "name": "logRestartTerminalEvent",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 370,
+      "name": "runBeforeOneAttempt",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 439,
+      "name": "runBeforeHealthcheck",
+      "percentage": 89.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 499,
+      "name": "tryHealthcheckAttempt",
+      "percentage": 72.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 562,
+      "name": "logHealthcheckTimeout",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 591,
+      "name": "elapsed",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/before.go",
+      "line": 599,
+      "name": "truncate",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/exec.go",
+      "line": 67,
+      "name": "runShell",
+      "percentage": 93.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/exec.go",
+      "line": 184,
+      "name": "resolveRunDefaults",
+      "percentage": 70
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/exec.go",
+      "line": 216,
+      "name": "envMapToSlice",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/exec.go",
+      "line": 252,
+      "name": "Write",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/exec.go",
+      "line": 304,
+      "name": "buildArgv",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/handler.go",
+      "line": 71,
+      "name": "handleRunCommand",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/handler.go",
+      "line": 102,
+      "name": "buildRunOpts",
+      "percentage": 95.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/handler.go",
+      "line": 178,
+      "name": "resolveDirectory",
+      "percentage": 85
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/handler.go",
+      "line": 239,
+      "name": "textResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/output.go",
+      "line": 26,
+      "name": "encodeOutput",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 69,
+      "name": "UnmarshalYAML",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 90,
+      "name": "UnmarshalJSON",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 111,
+      "name": "Duration",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 142,
+      "name": "decodeConnect",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 204,
+      "name": "decodeDuration",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 226,
+      "name": "decodeInt",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 251,
+      "name": "decodeStringMap",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 293,
+      "name": "decodeStringSlice",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 326,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/shell/shell.go",
+      "line": 357,
+      "name": "Connect",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 49,
+      "name": "Apply",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 77,
+      "name": "joinPlanErrors",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 98,
+      "name": "fanOutConnects",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 141,
+      "name": "planTools",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 179,
+      "name": "filterSourceTools",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 193,
+      "name": "warnIfReadOnlyEmpty",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 215,
+      "name": "addPlanned",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 240,
+      "name": "registerPlanned",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/dispatcher.go",
+      "line": 250,
+      "name": "dispatch",
+      "percentage": 57.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/middleware.go",
+      "line": 19,
+      "name": "applyPrefix",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/middleware.go",
+      "line": 45,
+      "name": "applyReadOnly",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/middleware.go",
+      "line": 76,
+      "name": "applyRemove",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/middleware.go",
+      "line": 108,
+      "name": "applyEnableOnly",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/middleware.go",
+      "line": 134,
+      "name": "compilePatterns",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/middleware.go",
+      "line": 151,
+      "name": "nameMatchesAny",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/source.go",
+      "line": 72,
+      "name": "LoadSources",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/source/source.go",
+      "line": 121,
+      "name": "isJSON",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 150,
+      "name": "decodeActivityArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 159,
+      "name": "resolveStartToCloseTimeout",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 184,
+      "name": "decodeActivityArguments",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 213,
+      "name": "encodeActivityToken",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 225,
+      "name": "decodeActivityToken",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 252,
+      "name": "marshalActivityToolResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 279,
+      "name": "activityExecutionStatusName",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 292,
+      "name": "handleStartActivity",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 323,
+      "name": "handleExecuteActivity",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 364,
+      "name": "decodeStartExecuteActivityArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 404,
+      "name": "handleRunID",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 414,
+      "name": "normalizeNilResult",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 426,
+      "name": "handleGetActivityResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 464,
+      "name": "pollActivityResult",
+      "percentage": 70
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 492,
+      "name": "resolveActivityRunID",
+      "percentage": 60
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 509,
+      "name": "handleDescribeActivity",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 540,
+      "name": "activityDescriptionToMap",
+      "percentage": 94.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 594,
+      "name": "handleListActivities",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 655,
+      "name": "resolveListPagination",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 681,
+      "name": "collectActivitiesPage",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 719,
+      "name": "activityInfoToSummary",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 755,
+      "name": "encodeNextPageToken",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 766,
+      "name": "handleCountActivities",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 808,
+      "name": "handleCancelActivity",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 835,
+      "name": "handleTerminateActivity",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_handlers.go",
+      "line": 864,
+      "name": "runActivityLifecycleOp",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 79,
+      "name": "activityTools",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 94,
+      "name": "startActivityTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 114,
+      "name": "executeActivityTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 134,
+      "name": "getActivityResultTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 154,
+      "name": "describeActivityTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 174,
+      "name": "listActivitiesTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 194,
+      "name": "countActivitiesTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 214,
+      "name": "cancelActivityTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/activity_tools.go",
+      "line": 234,
+      "name": "terminateActivityTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 195,
+      "name": "batchExec",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 276,
+      "name": "clampConcurrency",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 291,
+      "name": "clampLimit",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 303,
+      "name": "envelope",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 332,
+      "name": "decodeBatchArgs",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 343,
+      "name": "batchErr",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 361,
+      "name": "workflowItemID",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 377,
+      "name": "activityItemID",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 393,
+      "name": "handleBatchSignal",
+      "percentage": 90.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 444,
+      "name": "handleBatchCancel",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 478,
+      "name": "handleBatchTerminate",
+      "percentage": 94.1
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 521,
+      "name": "handleBatchCancelActivities",
+      "percentage": 88.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 563,
+      "name": "handleBatchTerminateActivities",
+      "percentage": 78.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 613,
+      "name": "workflowItemsFromList",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 631,
+      "name": "activityItemsFromList",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 652,
+      "name": "batchDetailsAsSlice",
+      "percentage": 50
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 673,
+      "name": "marshalBatchToolResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 698,
+      "name": "noopLogger",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 706,
+      "name": "Write",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 713,
+      "name": "batchAnnotationsSignal",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 727,
+      "name": "batchAnnotationsCancel",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 741,
+      "name": "batchAnnotationsTerminate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/batch_handlers.go",
+      "line": 753,
+      "name": "batchTools",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 57,
+      "name": "newClientManager",
+      "percentage": 91.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 92,
+      "name": "Close",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 108,
+      "name": "ScheduleClient",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 124,
+      "name": "withScheduleClient",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 142,
+      "name": "StartWorkflow",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 158,
+      "name": "CancelWorkflow",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 169,
+      "name": "TerminateWorkflow",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 180,
+      "name": "GetWorkflow",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 193,
+      "name": "DescribeWorkflow",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 206,
+      "name": "ListWorkflow",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 219,
+      "name": "GetWorkflowHistory",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 237,
+      "name": "SignalWorkflow",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 259,
+      "name": "ExecuteActivity",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 275,
+      "name": "GetActivityHandle",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 288,
+      "name": "ListActivities",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 301,
+      "name": "CountActivities",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 323,
+      "name": "QueryWorkflowWithOptions",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 345,
+      "name": "batchSignal",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 359,
+      "name": "batchCancelWorkflow",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 375,
+      "name": "batchTerminateWorkflow",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 394,
+      "name": "batchListWorkflows",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 421,
+      "name": "batchListActivities",
+      "percentage": 46.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 455,
+      "name": "batchGetActivityHandle",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 490,
+      "name": "determineTLSConfig",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 525,
+      "name": "determineCredentials",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 549,
+      "name": "loadMTLSTLSConfig",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 569,
+      "name": "loadMTLSClientCert",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/client.go",
+      "line": 600,
+      "name": "isLocalHost",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 91,
+      "name": "marshalQuerySignalToolResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 117,
+      "name": "decodeQuerySignalArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 144,
+      "name": "decodeArgsSlice",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 164,
+      "name": "decodeQueryResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 186,
+      "name": "validateQueryWorkflowArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 200,
+      "name": "validateSignalWorkflowArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 217,
+      "name": "buildQueryRequest",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 235,
+      "name": "normalizeSignalPayload",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 249,
+      "name": "handleQueryWorkflow",
+      "percentage": 93.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 285,
+      "name": "executeQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_handlers.go",
+      "line": 318,
+      "name": "handleSignalWorkflow",
+      "percentage": 93.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_tools.go",
+      "line": 19,
+      "name": "querySignalTools",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_tools.go",
+      "line": 28,
+      "name": "queryWorkflowTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/query_signal_tools.go",
+      "line": 49,
+      "name": "signalWorkflowTool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 81,
+      "name": "decodeArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 91,
+      "name": "marshalToolResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 125,
+      "name": "decodeScheduleArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 148,
+      "name": "handleCreateSchedule",
+      "percentage": 94.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 207,
+      "name": "validateCreateScheduleArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 232,
+      "name": "handleListSchedules",
+      "percentage": 91.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 263,
+      "name": "drainScheduleIterator",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 292,
+      "name": "handlePauseSchedule",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 329,
+      "name": "handleUnpauseSchedule",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 366,
+      "name": "handleDeleteSchedule",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 399,
+      "name": "handleTriggerSchedule",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 434,
+      "name": "handleDescribeSchedule",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/schedule_handlers.go",
+      "line": 486,
+      "name": "scheduleEntryToSummary",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/temporal.go",
+      "line": 644,
+      "name": "Connect",
+      "percentage": 92.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/temporal.go",
+      "line": 729,
+      "name": "scheduleTools",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/temporal.go",
+      "line": 866,
+      "name": "decodeConnect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/temporal.go",
+      "line": 914,
+      "name": "applyString",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/temporal.go",
+      "line": 939,
+      "name": "applyBool",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/temporal.go",
+      "line": 966,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 142,
+      "name": "decodeWorkflowArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 151,
+      "name": "marshalWorkflowToolResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 181,
+      "name": "decodeWorkflowArgsSlice",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 200,
+      "name": "decodeArgsRequest",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 212,
+      "name": "requireWorkflowID",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 225,
+      "name": "historyEventSummary",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 242,
+      "name": "executionSummary",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 267,
+      "name": "describeSummary",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 295,
+      "name": "decodeListRequest",
+      "percentage": 58.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 334,
+      "name": "drainHistoryIterator",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 365,
+      "name": "handleStartWorkflow",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 406,
+      "name": "validateStartWorkflowArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 429,
+      "name": "handleCancelWorkflow",
+      "percentage": 91.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 459,
+      "name": "handleTerminateWorkflow",
+      "percentage": 94.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 503,
+      "name": "handleGetWorkflowResult",
+      "percentage": 92.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 539,
+      "name": "handleDescribeWorkflow",
+      "percentage": 91.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 566,
+      "name": "handleListWorkflows",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 605,
+      "name": "handleGetWorkflowHistory",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 647,
+      "name": "handleContinueAsNew",
+      "percentage": 94.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_handlers.go",
+      "line": 696,
+      "name": "validateContinueAsNewArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/temporal/workflow_tools.go",
+      "line": 91,
+      "name": "workflowTools",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tool/options.go",
+      "line": 36,
+      "name": "NewOptions",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tool/options.go",
+      "line": 49,
+      "name": "WithLogger",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tool/options.go",
+      "line": 58,
+      "name": "WithTracer",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tool/options.go",
+      "line": 67,
+      "name": "Logger",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tool/options.go",
+      "line": 78,
+      "name": "Tracer",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker.go",
+      "line": 179,
+      "name": "decodeConnect",
+      "percentage": 61.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker.go",
+      "line": 225,
+      "name": "validate",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker.go",
+      "line": 248,
+      "name": "Connect",
+      "percentage": 63.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 72,
+      "name": "newClient",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 104,
+      "name": "parseBaseURL",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 120,
+      "name": "buildSearchBody",
+      "percentage": 40
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 148,
+      "name": "searchIssues",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 191,
+      "name": "getIssue",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 220,
+      "name": "getLinks",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 245,
+      "name": "getComments",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 272,
+      "name": "buildCreateIssueBody",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 322,
+      "name": "createIssue",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 346,
+      "name": "setBodyString",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 353,
+      "name": "buildUpdateIssueBody",
+      "percentage": 95.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 393,
+      "name": "buildUpdateIssueQueryParams",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 408,
+      "name": "updateIssue",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 435,
+      "name": "createComment",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 464,
+      "name": "updateComment",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 496,
+      "name": "getWikiPage",
+      "percentage": 93.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 541,
+      "name": "getWikiSubpages",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 576,
+      "name": "buildTrackerURL",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 581,
+      "name": "buildWikiURL",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 586,
+      "name": "buildURL",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 620,
+      "name": "buildSearchQueryParams",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 645,
+      "name": "trackerRequest",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 650,
+      "name": "wikiRequest",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 655,
+      "name": "setTrackerAuthHeaders",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 660,
+      "name": "setWikiAuthHeaders",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 665,
+      "name": "setAuthHeadersForHost",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 677,
+      "name": "handleResponse",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 705,
+      "name": "doRequest",
+      "percentage": 81.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_client.go",
+      "line": 743,
+      "name": "listQueues",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_fields.go",
+      "line": 73,
+      "name": "getFields",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 17,
+      "name": "jsonResult",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 42,
+      "name": "handleSearchIssues",
+      "percentage": 10
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 63,
+      "name": "handleGetIssue",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 88,
+      "name": "handleGetLinks",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 113,
+      "name": "handleGetComments",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 139,
+      "name": "handleGetFields",
+      "percentage": 50
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 155,
+      "name": "handleGetWikiPage",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 181,
+      "name": "handleGetWikiSubpages",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 206,
+      "name": "handleListQueues",
+      "percentage": 20
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 218,
+      "name": "handleReport",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 243,
+      "name": "handleCreateIssue",
+      "percentage": 7.1
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 272,
+      "name": "handleUpdateIssue",
+      "percentage": 8.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 297,
+      "name": "handleCreateComment",
+      "percentage": 7.1
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_handlers.go",
+      "line": 326,
+      "name": "handleUpdateComment",
+      "percentage": 6.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_oauth.go",
+      "line": 57,
+      "name": "parseOAuthURL",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_oauth.go",
+      "line": 78,
+      "name": "exchangeDeviceCode",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_oauth.go",
+      "line": 132,
+      "name": "pollForToken",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_oauth.go",
+      "line": 187,
+      "name": "token",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_oauth.go",
+      "line": 203,
+      "name": "requestToken",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 31,
+      "name": "generateReport",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 93,
+      "name": "buildSearchQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 115,
+      "name": "categorizeIssue",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 134,
+      "name": "issueToReportTask",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 189,
+      "name": "fetchWikiContext",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 209,
+      "name": "isCompletedStatus",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 220,
+      "name": "extractMonth",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 229,
+      "name": "truncate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/tracker/tracker_report.go",
+      "line": 238,
+      "name": "formatPeriod",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 69,
+      "name": "Name",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 72,
+      "name": "Supports",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 77,
+      "name": "RequiresAPIKey",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 80,
+      "name": "Search",
+      "percentage": 26.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 132,
+      "name": "MatchesAnyDomain",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 155,
+      "name": "isSuccessStatus",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 160,
+      "name": "readAPIError",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 170,
+      "name": "resolveKind",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 179,
+      "name": "buildBraveURL",
+      "percentage": 92.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 205,
+      "name": "applyBraveOptionalParams",
+      "percentage": 70
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 228,
+      "name": "resolveOffset",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 244,
+      "name": "applyDomainFilters",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 264,
+      "name": "getCount",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 273,
+      "name": "parseBraveResponse",
+      "percentage": 86.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 316,
+      "name": "extractBraveQuery",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 335,
+      "name": "extractBraveResults",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 369,
+      "name": "getExcludeDomains",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 378,
+      "name": "extractBraveWebResults",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 395,
+      "name": "extractBraveNewsResults",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 412,
+      "name": "extractBraveImageResults",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 429,
+      "name": "mapWebItems",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 447,
+      "name": "mapNewsItems",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 465,
+      "name": "mapImageItems",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 488,
+      "name": "filterExcludedDomains",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 504,
+      "name": "GetIncludeDomains",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/brave.go",
+      "line": 513,
+      "name": "GetExcludeDomains",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 36,
+      "name": "NewLRUCache",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 48,
+      "name": "Get",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 83,
+      "name": "Set",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 90,
+      "name": "SetWithTTL",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 115,
+      "name": "Clear",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 124,
+      "name": "Size",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 132,
+      "name": "removeElement",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cache.go",
+      "line": 143,
+      "name": "evictOldest",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cursor.go",
+      "line": 22,
+      "name": "EncodeOffsetCursor",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cursor.go",
+      "line": 31,
+      "name": "DecodeOffsetCursor",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cursor.go",
+      "line": 42,
+      "name": "EncodeBodyCursor",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cursor.go",
+      "line": 51,
+      "name": "DecodeBodyCursor",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/cursor.go",
+      "line": 61,
+      "name": "parseCursorPrefix",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 39,
+      "name": "Name",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 42,
+      "name": "Supports",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 47,
+      "name": "RequiresAPIKey",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 50,
+      "name": "Search",
+      "percentage": 20
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 95,
+      "name": "buildDDGURL",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 110,
+      "name": "parseDDGResponse",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 140,
+      "name": "getDDGCount",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 149,
+      "name": "getSearchLang",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 158,
+      "name": "parseDDGResults",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/duckduckgo.go",
+      "line": 195,
+      "name": "unwrapDDG",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 63,
+      "name": "NewFetchService",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 74,
+      "name": "FetchURL",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 150,
+      "name": "followRedirects",
+      "percentage": 73.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 185,
+      "name": "fetchSingleHop",
+      "percentage": 70.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 230,
+      "name": "resolveRedirect",
+      "percentage": 63.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 264,
+      "name": "buildDocument",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 296,
+      "name": "applyTextPagination",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 319,
+      "name": "resolveResultIDs",
+      "percentage": 50
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 330,
+      "name": "decodeCursor",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 344,
+      "name": "resolveMaxChars",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 353,
+      "name": "resolveMaxBytes",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 362,
+      "name": "decodeBody",
+      "percentage": 72.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 386,
+      "name": "isHTML",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 400,
+      "name": "looksLikeHTMLURL",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/fetch_service.go",
+      "line": 410,
+      "name": "isRedirect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 66,
+      "name": "blockTagRe",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 75,
+      "name": "ExtractReadable",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 104,
+      "name": "stripBlockElements",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 118,
+      "name": "extractTitle",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 133,
+      "name": "extractLinks",
+      "percentage": 92.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 162,
+      "name": "isInvalidLink",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 170,
+      "name": "insertBlockBreaks",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 183,
+      "name": "stripTags",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 189,
+      "name": "collapseWhitespace",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 202,
+      "name": "decodeEntities",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 227,
+      "name": "decodeDecimalEntity",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/html.go",
+      "line": 242,
+      "name": "decodeHexEntity",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 39,
+      "name": "isRetryableStatus",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 55,
+      "name": "Fetch",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 93,
+      "name": "fetchWithRetries",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 119,
+      "name": "executeAttempt",
+      "percentage": 94.1
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 164,
+      "name": "Error",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 165,
+      "name": "Unwrap",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 168,
+      "name": "isRetryable",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 187,
+      "name": "waitWithJitter",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/http.go",
+      "line": 195,
+      "name": "randByte",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ids.go",
+      "line": 28,
+      "name": "MintResultID",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ids.go",
+      "line": 40,
+      "name": "LooksLikeResultID",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ids.go",
+      "line": 46,
+      "name": "ResolveResultID",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ids.go",
+      "line": 51,
+      "name": "ClearIDStore",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 24,
+      "name": "NewProviderFactory",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 37,
+      "name": "Add",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 63,
+      "name": "Get",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 75,
+      "name": "GetDefault",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 89,
+      "name": "SetDefault",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 111,
+      "name": "Names",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/provider_factory.go",
+      "line": 127,
+      "name": "SetupDefaults",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 32,
+      "name": "NewSearchService",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 43,
+      "name": "Search",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 52,
+      "name": "SearchWith",
+      "percentage": 94.1
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 89,
+      "name": "GetProviders",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 94,
+      "name": "resolveProvider",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 115,
+      "name": "buildSearchCacheKey",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 141,
+      "name": "normalizeSearchOptions",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 175,
+      "name": "ResolveResultIDQuery",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/search_service.go",
+      "line": 185,
+      "name": "ExtractProviderHint",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 38,
+      "name": "ParseAndCheckScheme",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 58,
+      "name": "AssertPublicHost",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 81,
+      "name": "rejectBlockedHostname",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 90,
+      "name": "isBlockedHostname",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 98,
+      "name": "resolveLiteral",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 112,
+      "name": "resolveAndCheckHost",
+      "percentage": 42.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 133,
+      "name": "IsPrivateIP",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 147,
+      "name": "isPrivateIPv4",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 158,
+      "name": "isPrivateIPv4Range",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 187,
+      "name": "isPrivateIPv6",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 211,
+      "name": "parseIPv4Mapped",
+      "percentage": 20
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 234,
+      "name": "ParseLooseIPv4",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 254,
+      "name": "isValidLooseChars",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 267,
+      "name": "isLooseChar",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 286,
+      "name": "parseLooseParts",
+      "percentage": 88.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 308,
+      "name": "parseLoosePart",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 320,
+      "name": "parseUintUnchecked",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 339,
+      "name": "accumulateDigit",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 356,
+      "name": "digitValue",
+      "percentage": 71.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 374,
+      "name": "assembleIPv4",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 392,
+      "name": "computeOctets",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 408,
+      "name": "computeOctets1",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 418,
+      "name": "computeOctets2",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 434,
+      "name": "computeOctets3",
+      "percentage": 75
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/ssrf.go",
+      "line": 453,
+      "name": "computeOctets4",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 72,
+      "name": "UnmarshalYAML",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 93,
+      "name": "UnmarshalJSON",
+      "percentage": 0
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 114,
+      "name": "Duration",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 153,
+      "name": "decodeConnect",
+      "percentage": 63.2
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 209,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 217,
+      "name": "resolveAPIKey",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 234,
+      "name": "init",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 256,
+      "name": "buildSearchOptions",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch.go",
+      "line": 287,
+      "name": "Connect",
+      "percentage": 94.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch_handlers.go",
+      "line": 17,
+      "name": "textResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch_handlers.go",
+      "line": 44,
+      "name": "handleWebSearch",
+      "percentage": 94.4
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch_handlers.go",
+      "line": 82,
+      "name": "handleNewsSearch",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch_handlers.go",
+      "line": 128,
+      "name": "handleImageSearch",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch_handlers.go",
+      "line": 173,
+      "name": "handleFetchURL",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/websearch/websearch_handlers.go",
+      "line": 205,
+      "name": "handleListProviders",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker.go",
+      "line": 122,
+      "name": "containsKey",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker.go",
+      "line": 156,
+      "name": "decodeConnect",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker.go",
+      "line": 188,
+      "name": "validate",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker.go",
+      "line": 234,
+      "name": "Connect",
+      "percentage": 92.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 42,
+      "name": "newWoodpeckerClient",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 168,
+      "name": "logKind",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 190,
+      "name": "decodeLogEntries",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 204,
+      "name": "decodeLogEntry",
+      "percentage": 91.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 234,
+      "name": "decodeLogBytes",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 242,
+      "name": "listRepos",
+      "percentage": 90.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 274,
+      "name": "listPipelines",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 310,
+      "name": "getPipeline",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 339,
+      "name": "getStepLogs",
+      "percentage": 77.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 377,
+      "name": "restartPipeline",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 410,
+      "name": "launchPipeline",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 452,
+      "name": "cancelPipeline",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 482,
+      "name": "jsonBytes",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 491,
+      "name": "jsonArrayLen",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 504,
+      "name": "toRepoSummary",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 532,
+      "name": "toPipelineSummary",
+      "percentage": 85.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 561,
+      "name": "toPipelineDetail",
+      "percentage": 91.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 600,
+      "name": "toWorkflowWrap",
+      "percentage": 90
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 627,
+      "name": "toStepWrap",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 645,
+      "name": "pipelineDuration",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 655,
+      "name": "strDeref",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 664,
+      "name": "boolDeref",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_client.go",
+      "line": 673,
+      "name": "intDeref",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 70,
+      "name": "decodeArgs",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 76,
+      "name": "optionalStringPtr",
+      "percentage": 100
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 86,
+      "name": "optionalIntPtr",
+      "percentage": 66.7
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 99,
+      "name": "marshalToolResult",
+      "percentage": 87.5
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 123,
+      "name": "handleListRepos",
+      "percentage": 76.9
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 149,
+      "name": "handleListPipelines",
+      "percentage": 83.3
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 183,
+      "name": "handleGetPipeline",
+      "percentage": 84.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 213,
+      "name": "handleGetStepLogs",
+      "percentage": 80
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 245,
+      "name": "handleRestartPipeline",
+      "percentage": 78.6
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 283,
+      "name": "handleLaunchPipeline",
+      "percentage": 81.8
+    },
+    {
+      "file": "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go",
+      "line": 311,
+      "name": "handleCancelPipeline",
+      "percentage": 76.9
+    }
+  ],
+  "total_coverage": 85.5,
+  "files": {
+    "go.amidman.dev/mcp/cmd/main.go": 100,
+    "go.amidman.dev/mcp/decode/decode.go": 100,
+    "go.amidman.dev/mcp/english/english.go": 100,
+    "go.amidman.dev/mcp/english/english_client.go": 100,
+    "go.amidman.dev/mcp/english/english_types.go": 83.3,
+    "go.amidman.dev/mcp/fs/atomic_write.go": 68.2,
+    "go.amidman.dev/mcp/fs/fs.go": 100,
+    "go.amidman.dev/mcp/fs/grep.go": 100,
+    "go.amidman.dev/mcp/fs/handlers.go": 100,
+    "go.amidman.dev/mcp/fs/output.go": 100,
+    "go.amidman.dev/mcp/fs/pathguard.go": 100,
+    "go.amidman.dev/mcp/fs/pathlock.go": 100,
+    "go.amidman.dev/mcp/github/github.go": 100,
+    "go.amidman.dev/mcp/gitlab/gitlab.go": 100,
+    "go.amidman.dev/mcp/http/http.go": 100,
+    "go.amidman.dev/mcp/postgres/postgres.go": 100,
+    "go.amidman.dev/mcp/postgres/postgres_handlers.go": 100,
+    "go.amidman.dev/mcp/postgres/postgres_queries.go": 100,
+    "go.amidman.dev/mcp/postgres/postgres_readonly.go": 100,
+    "go.amidman.dev/mcp/postgres/postgres_tableinfo.go": 100,
+    "go.amidman.dev/mcp/proxy/proxy.go": 100,
+    "go.amidman.dev/mcp/ruleguard/banUntypedNilInCompositeLit.go": 0,
+    "go.amidman.dev/mcp/ruleguard/banUntypedNilInFuncCall.go": 100,
+    "go.amidman.dev/mcp/scripts/fix-untyped-nil/fixer/fixer.go": 100,
+    "go.amidman.dev/mcp/scripts/fix-untyped-nil/main.go": 100,
+    "go.amidman.dev/mcp/sequentialthinking/handler.go": 100,
+    "go.amidman.dev/mcp/sequentialthinking/sequentialthinking.go": 100,
+    "go.amidman.dev/mcp/shell/before.go": 100,
+    "go.amidman.dev/mcp/shell/exec.go": 100,
+    "go.amidman.dev/mcp/shell/handler.go": 100,
+    "go.amidman.dev/mcp/shell/output.go": 100,
+    "go.amidman.dev/mcp/shell/shell.go": 100,
+    "go.amidman.dev/mcp/source/dispatcher.go": 100,
+    "go.amidman.dev/mcp/source/middleware.go": 100,
+    "go.amidman.dev/mcp/source/source.go": 100,
+    "go.amidman.dev/mcp/temporal/activity_handlers.go": 100,
+    "go.amidman.dev/mcp/temporal/activity_tools.go": 100,
+    "go.amidman.dev/mcp/temporal/batch_handlers.go": 100,
+    "go.amidman.dev/mcp/temporal/client.go": 100,
+    "go.amidman.dev/mcp/temporal/query_signal_handlers.go": 100,
+    "go.amidman.dev/mcp/temporal/query_signal_tools.go": 100,
+    "go.amidman.dev/mcp/temporal/schedule_handlers.go": 100,
+    "go.amidman.dev/mcp/temporal/temporal.go": 100,
+    "go.amidman.dev/mcp/temporal/workflow_handlers.go": 100,
+    "go.amidman.dev/mcp/temporal/workflow_tools.go": 100,
+    "go.amidman.dev/mcp/tool/options.go": 100,
+    "go.amidman.dev/mcp/tracker/tracker.go": 85.7,
+    "go.amidman.dev/mcp/tracker/tracker_client.go": 100,
+    "go.amidman.dev/mcp/tracker/tracker_fields.go": 92.3,
+    "go.amidman.dev/mcp/tracker/tracker_handlers.go": 100,
+    "go.amidman.dev/mcp/tracker/tracker_oauth.go": 100,
+    "go.amidman.dev/mcp/tracker/tracker_report.go": 100,
+    "go.amidman.dev/mcp/websearch/brave.go": 100,
+    "go.amidman.dev/mcp/websearch/cache.go": 100,
+    "go.amidman.dev/mcp/websearch/cursor.go": 100,
+    "go.amidman.dev/mcp/websearch/duckduckgo.go": 100,
+    "go.amidman.dev/mcp/websearch/fetch_service.go": 100,
+    "go.amidman.dev/mcp/websearch/html.go": 100,
+    "go.amidman.dev/mcp/websearch/http.go": 100,
+    "go.amidman.dev/mcp/websearch/ids.go": 100,
+    "go.amidman.dev/mcp/websearch/provider_factory.go": 100,
+    "go.amidman.dev/mcp/websearch/search_service.go": 100,
+    "go.amidman.dev/mcp/websearch/ssrf.go": 100,
+    "go.amidman.dev/mcp/websearch/websearch.go": 100,
+    "go.amidman.dev/mcp/websearch/websearch_handlers.go": 100,
+    "go.amidman.dev/mcp/woodpecker/woodpecker.go": 100,
+    "go.amidman.dev/mcp/woodpecker/woodpecker_client.go": 100,
+    "go.amidman.dev/mcp/woodpecker/woodpecker_handlers.go": 100
+  }
+}

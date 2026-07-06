@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"deleted": {
+			"type": "boolean",
+			"description": "True when the Temporal server accepted the delete. False is never returned today — failures surface as errors. Deleting an already-deleted schedule is a no-op on the server and returns success."
+		},
+		"schedule_id": {
+			"type": "string",
+			"description": "Echoes the schedule_id argument."
+		}
+	},
+	"required": ["deleted", "schedule_id"]
+}

@@ -1,0 +1,12 @@
+{
+	"type": "object",
+	"properties": {
+		"commits": {
+			"type": "array",
+			"description": "List of commits in the merge request, each with SHA, title, message, author, and timestamps",
+			"items": {
+				"type": "object"
+			}
+		}
+	}
+}

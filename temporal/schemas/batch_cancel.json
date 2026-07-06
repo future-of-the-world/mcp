@@ -1,0 +1,22 @@
+{
+	"type": "object",
+	"properties": {
+		"query": {
+			"type": "string",
+			"description": "Temporal visibility query. The SQL-like WHERE clause accepted by Temporal's ListWorkflow endpoint, e.g. \"ExecutionStatus = 'Running'\"."
+		},
+		"limit": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 100,
+			"description": "Maximum number of workflow executions the visibility query returns (single page). Mirrors the server-side PageSize parameter."
+		},
+		"concurrency": {
+			"type": "integer",
+			"minimum": 1,
+			"default": 50,
+			"description": "Number of concurrent cancel requests dispatched to the Temporal frontend. Capped at 100 to protect the frontend from overload."
+		}
+	},
+	"required": ["query"]
+}

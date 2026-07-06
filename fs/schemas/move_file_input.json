@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Path of the file or directory to move."
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination path. Must also live inside the configured allowed_paths."
+    }
+  },
+  "required": ["source", "destination"],
+  "additionalProperties": false
+}

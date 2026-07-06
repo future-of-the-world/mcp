@@ -1,0 +1,18 @@
+{
+	"type": "object",
+	"properties": {
+		"activity_id": {
+			"type": "string",
+			"description": "Standalone activity execution ID to cancel."
+		},
+		"run_id": {
+			"type": "string",
+			"description": "Optional run ID to disambiguate retries. Omit to cancel the most recent execution."
+		},
+		"reason": {
+			"type": "string",
+			"description": "Optional human-readable reason recorded on the cancellation event."
+		}
+	},
+	"required": ["activity_id"]
+}

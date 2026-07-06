@@ -1,0 +1,25 @@
+{
+	"type": "object",
+	"properties": {
+		"title":        {"type": "string"},
+		"text":         {"type": "string"},
+		"links": {
+			"type": "array",
+			"description": "Hyperlinks extracted from the page",
+			"items": {
+				"type": "object",
+				"properties": {
+					"text": {"type": "string"},
+					"href": {"type": "string"}
+				}
+			}
+		},
+		"url":          {"type": "string"},
+		"final_url":    {"type": "string"},
+		"status":       {"type": "integer"},
+		"content_type": {"type": "string"},
+		"byte_length":  {"type": "integer"},
+		"next_cursor":  {"type": "string"},
+		"cached":       {"type": "boolean"}
+	}
+}
